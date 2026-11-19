@@ -3,96 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monumentos do Peddy Paper - Viana do Castelo</title>
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="terracotta">
+  <title>Monumentos do Peddy Paper — Viana do Castelo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Geist+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: light;
 
-      /* Page and surfaces */
-      --background: #faf9f5;
-      --surface-container-low: #ffffff;
-      --surface-container: #f1efe8;
-      --surface-container-high: #e6e2d6;
+      /* Page and surfaces (Terracotta) */
+      --background: #f9f3eb;
+      --surface-container-low: #f3e9dc;
+      --surface-container: #ede0d0;
+      --surface-container-high: #e4d4c0;
+      --surface-card: #fcf8f2;
 
       /* Ink */
-      --on-surface: #17181a;
-      --on-surface-variant: #56585c;
+      --on-surface: #261b15;
+      --on-surface-variant: #57483f;
 
-      /* Rules */
-      --outline: #17181a;
-      --outline-variant: #dedad0;
+      /* Borders */
+      --outline: #9e8a78;
+      --outline-variant: #dfd0be;
+      --border-featured: #c98a6b;
+      --border-warm: #c4b29e;
+      --border-emerald: #b5d6c9;
 
       /* Accents */
-      --primary: #17181a;
-      --on-primary: #faf9f5;
-      --primary-container: #f2b705;
-      --on-primary-container: #17181a;
-      --secondary: #1f4e5f;
-      --secondary-soft: #e7eff2;
-      --tertiary: #785008;
-      --tertiary-soft: #f5e6c4;
-      --error: #b42318;
+      --primary: #b84a24;
+      --on-primary: #ffffff;
+      --primary-container: #f7ebe0;
+      --on-primary-container: #7d2e12;
+      --secondary: #8f6524;
+      --secondary-container: #f4ead6;
+      --tertiary: #1d6356;
+      --tertiary-container: #e1efe9;
+      --on-tertiary-container: #13473d;
+      --error: #b82929;
       --on-error: #ffffff;
-      --error-soft: #fdecec;
 
       /* Data series */
-      --data-1: #1f4e5f;
-      --data-2: #d99000;
-      --data-3: #2b6e52;
-      --data-4: #b84a39;
-
-      /* Fonts */
-      --font-headline: 'Source Serif 4', serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-label: 'Geist Mono', monospace;
-
-      /* Shape */
-      --rounded: 0.25rem;
-      --rounded-lg: 0.375rem;
-      --badge-radius: 2px;
-
-      /* Style effects */
-      --section-rule: 1.5px solid var(--outline);
-      --card-border: 1px solid var(--outline-variant);
-      --heading-tracking: -0.02em;
-      --label-tracking: 0.08em;
+      --data-1: #b84a24;
+      --data-2: #1d6356;
+      --data-3: #b5893e;
+      --data-4: #8c3838;
+      --data-context: #a39384;
 
       /* Semantic & Focus */
-      --positive: #2b6e52;
-      --positive-soft: #e6f2ec;
-      --focus: #1f4e5f;
-      --shadow-card-hover: 0 4px 18px rgba(23, 24, 26, 0.06);
-      --backdrop-scrim: rgba(23, 24, 26, 0.86);
+      --positive: #1d6356;
+      --warning: #8f6524;
+      --focus: #b84a24;
 
-      /* Type Scale */
-      --display-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.35rem);
-      --headline-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
-      --subhead-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+      /* Fonts */
+      --font-headline: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-label: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Geist Mono', ui-monospace, monospace;
+
+      /* Shape */
+      --rounded: 0.375rem;
+      --rounded-lg: 0.75rem;
+      --rounded-arch: 28px 28px 6px 6px;
+      --rounded-full: 9999px;
+
+      /* Effects */
+      --soft-shadow: 0 4px 18px rgb(38 27 21 / 0.04);
+      --soft-shadow-raised: 0 8px 28px rgb(38 27 21 / 0.08);
+      --warm-hairline: 1px solid var(--outline-variant);
+      --brass-gradient: linear-gradient(90deg, #d8c3b0, #b5893e, #d8c3b0);
+
+      /* Type scale (Focused Tool) */
+      --display-size: clamp(2rem, 1.4rem + 2.4vw, 3.125rem);
+      --headline-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.75rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
       --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
       --label-size: 0.75rem;
 
       /* Spacing scale */
+      --space-2xs: 0.125rem;
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
       --space-lg: 1.5rem;
       --space-xl: 2.5rem;
+      --space-2xl: 4rem;
 
       /* Motion */
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
       --dur-micro: 120ms;
       --dur-short: 220ms;
+      --dur-long: 420ms;
     }
 
+    /* Base reset */
     *, *::before, *::after { box-sizing: border-box; }
-    html, body {
-      overflow-x: clip;
-      margin: 0;
-      padding: 0;
+    html, body { overflow-x: clip; margin: 0; padding: 0; }
+    header { position: static !important; }
+
+    body {
       background-color: var(--background);
       color: var(--on-surface);
       font-family: var(--font-body);
@@ -101,626 +112,631 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .page-grid {
-      display: grid;
-      gap: var(--space-lg);
-      padding: var(--space-lg);
-      max-width: 1200px;
-      margin: 0 auto;
-      overflow: hidden;
+    button, input, select, textarea {
+      font-family: inherit;
     }
-    .page-grid * { min-width: 0; }
 
     :focus-visible {
       outline: 2px solid var(--focus);
       outline-offset: 2px;
     }
 
-    /* Header */
-    .dossier-bar {
+    .page-grid {
+      display: grid;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      max-width: 1140px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Hero / Cabeçalho do Caderno de Campo */
+    .notebook-header {
+      padding-top: var(--space-sm);
+      padding-bottom: var(--space-xs);
+    }
+
+    .kicker-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-sm);
-      border-bottom: var(--section-rule);
-      padding-bottom: var(--space-sm);
-      margin-bottom: var(--space-md);
+      margin-bottom: var(--space-sm);
     }
-    .dossier-bar-left {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-    .dossier-pill {
-      background: var(--primary-container);
-      color: var(--on-primary-container);
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.6875rem;
-      letter-spacing: var(--label-tracking);
-      text-transform: uppercase;
-      padding: 0.2rem 0.55rem;
-      border-radius: var(--badge-radius);
-    }
-    .dossier-meta {
+
+    .kicker {
       font-family: var(--font-label);
       font-size: var(--label-size);
-      color: var(--on-surface-variant);
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      color: var(--primary);
     }
-    .title {
+
+    .kicker-meta {
+      font-family: var(--font-mono);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-title {
       font-family: var(--font-headline);
       font-weight: 600;
       font-size: var(--display-size);
-      letter-spacing: var(--heading-tracking);
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
       color: var(--on-surface);
-      margin: 0;
-    }
-    .standfirst {
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: var(--subhead-size);
-      color: var(--secondary);
-      margin: var(--space-sm) 0 0;
-      max-width: 72ch;
-      line-height: 1.48;
+      margin: 0 0 var(--space-sm) 0;
     }
 
-    /* Top KPI Strip */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-md);
+    .hero-title em {
+      font-style: italic;
+      color: var(--primary);
     }
-    .figure-card {
-      background: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-md);
+
+    .hero-lede {
+      max-width: 68ch;
+      color: var(--on-surface-variant);
+      margin: 0;
+      font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+      line-height: 1.62;
+    }
+
+    .ornament-rule {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
-    .figure-label {
+      align-items: center;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+      color: var(--secondary);
       font-family: var(--font-label);
       font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface-variant);
     }
-    .figure-value {
-      font-family: var(--font-headline);
-      font-weight: 600;
-      font-size: clamp(1.2rem, 1rem + 0.8vw, 1.75rem);
-      line-height: 1.15;
-      font-variant-numeric: lining-nums tabular-nums;
-      color: var(--on-surface);
-    }
-    .figure-note {
-      font-size: 0.78rem;
-      color: var(--secondary);
-      font-weight: 500;
-      line-height: 1.3;
+    .ornament-rule::before,
+    .ornament-rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--brass-gradient);
     }
 
-    /* Collapsible Panels (Compact on Mobile) */
-    .collapsible-panel {
-      background: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      overflow: hidden;
-    }
-    .collapsible-summary {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-sm);
-      padding: 0.85rem var(--space-md);
-      min-height: 48px;
-      cursor: pointer;
-      background: var(--surface-container);
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.9375rem;
-      color: var(--on-surface);
-      user-select: none;
-    }
-    .collapsible-summary::-webkit-details-marker {
-      display: none;
-    }
-    .collapsible-summary-left {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-    }
-    .collapsible-summary .chevron {
-      transition: transform var(--dur-short) var(--ease-out);
-      flex-shrink: 0;
-    }
-    .collapsible-panel[open] .collapsible-summary {
-      border-bottom: 1px solid var(--outline-variant);
-    }
-    .collapsible-panel[open] .collapsible-summary .chevron {
-      transform: rotate(180deg);
-    }
-    .collapsible-body {
-      padding: var(--space-md);
-    }
-
-    /* Spatial & Chronological Overview */
-    .overview-grid {
+    /* Riad Arch KPI / Summary Row */
+    .summary-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
       gap: var(--space-md);
     }
-    .panel-card {
-      background: var(--background);
-      border: var(--card-border);
-      border-radius: var(--rounded);
-      padding: var(--space-md);
+
+    .arch-card {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-arch);
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+      text-align: center;
+      box-shadow: var(--soft-shadow);
       display: flex;
       flex-direction: column;
-      gap: var(--space-sm);
+      justify-content: space-between;
+      gap: var(--space-xs);
     }
-    .panel-header {
+
+    .arch-card.is-featured {
+      background: var(--primary-container);
+      border-color: var(--border-featured);
+    }
+
+    .arch-label {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+
+    .arch-value {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.35rem);
+      line-height: 1.05;
+      color: var(--on-surface);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .arch-note {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--tertiary);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      border-radius: var(--rounded-full);
+      background: var(--surface-container-high);
+      overflow: hidden;
+      margin-top: var(--space-xs);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      border-radius: var(--rounded-full);
+      transition: width var(--dur-short) var(--ease-out);
+    }
+
+    /* Proximity Map & Timeline Panel */
+    .orientation-panel {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--soft-shadow);
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .section-header-row {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       justify-content: space-between;
-      gap: var(--space-xs);
-      border-bottom: 1px solid var(--outline-variant);
-      padding-bottom: var(--space-xs);
+      gap: var(--space-sm);
     }
-    .panel-title {
+
+    .section-heading {
       font-family: var(--font-headline);
       font-weight: 600;
-      font-size: var(--subhead-size);
-      margin: 0;
+      font-size: var(--headline-size);
+      line-height: 1.15;
       color: var(--on-surface);
+      margin: 0;
     }
-    .panel-sub {
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
+
+    .section-subtitle {
+      font-size: 0.875rem;
       color: var(--on-surface-variant);
+      margin: var(--space-xs) 0 0 0;
+      max-width: 68ch;
+    }
+
+    .orientation-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    .map-box {
+      background: var(--surface-card);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .map-svg-wrap {
+      width: 100%;
+      min-height: 290px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .map-svg {
+      width: 100%;
+      height: auto;
+      max-height: 330px;
+      display: block;
+    }
+
+    .map-pin-btn {
+      cursor: pointer;
+    }
+
+    .map-pin-btn circle.pin-ring {
+      transition: transform var(--dur-micro) var(--ease-out);
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .map-pin-btn:hover circle.pin-ring,
+    .map-pin-btn:focus-visible circle.pin-ring {
+      transform: scale(1.16);
+    }
+
+    .map-footnote {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      line-height: 1.45;
+      margin: 0;
+      padding-top: var(--space-xs);
+      border-top: var(--warm-hairline);
+    }
+
+    /* Chronological strip & quick stop index */
+    .timeline-box {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .timeline-title {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--secondary);
+      margin: 0;
     }
 
     .timeline-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
       display: grid;
-      gap: 2px;
+      gap: var(--space-xs);
     }
-    .timeline-row {
+
+    .timeline-jump-btn {
+      width: 100%;
+      min-height: 44px;
       display: grid;
       grid-template-columns: 78px minmax(0, 1fr) auto;
       align-items: center;
       gap: var(--space-sm);
       padding: var(--space-xs) var(--space-sm);
+      background: var(--surface-card);
+      border: 1px solid var(--outline-variant);
       border-radius: var(--rounded);
-      cursor: pointer;
-      border: 1px solid transparent;
-      background: transparent;
+      color: var(--on-surface);
       text-align: left;
-      font-family: inherit;
-      color: inherit;
-      min-height: 42px;
+      cursor: pointer;
       transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
     }
-    .timeline-row:hover {
-      background-color: var(--surface-container-low);
-      border-color: var(--outline-variant);
+
+    .timeline-jump-btn:hover {
+      background: var(--primary-container);
+      border-color: var(--border-featured);
     }
-    .timeline-year {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 600;
+
+    .timeline-jump-btn.is-visited {
+      background: var(--tertiary-container);
+      border-color: var(--border-emerald);
+    }
+
+    .timeline-era {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
       color: var(--secondary);
-      font-variant-numeric: tabular-nums;
     }
+
     .timeline-name {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--on-surface);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .timeline-style {
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
-      color: var(--on-surface-variant);
-      background: var(--surface-container);
-      padding: 0.125rem 0.45rem;
-      border-radius: var(--badge-radius);
-    }
 
-    .geo-frame {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: var(--space-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: var(--space-xs);
-    }
-    .geo-svg {
-      width: 100%;
-      height: 190px;
-      display: block;
-    }
-    .geo-point {
-      cursor: pointer;
-    }
-    .geo-point:hover circle {
-      fill: var(--primary-container);
-      stroke: var(--on-surface);
-    }
-    .geo-caption {
+    .timeline-stop-num {
+      font-family: var(--font-mono);
       font-size: 0.75rem;
+      font-weight: 500;
       color: var(--on-surface-variant);
-      line-height: 1.4;
-      margin: 0;
+      padding: 2px 6px;
+      border-radius: var(--rounded);
+      background: var(--surface-container-low);
     }
 
-    /* Controls & Filters Toolbar */
-    .toolbar {
-      display: grid;
-      grid-template-columns: minmax(200px, 1.3fr) minmax(170px, 1fr) minmax(170px, 1fr) auto;
-      gap: var(--space-md);
-      align-items: end;
-    }
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-    .field-label {
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface);
-    }
-    .text-input, .select-input {
-      font-family: var(--font-body);
-      font-size: 0.9375rem;
-      color: var(--on-surface);
-      background-color: var(--background);
+    /* Controls / Filter & Export Bar */
+    .controls-panel {
+      background: var(--surface-container);
       border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: 0.6rem 0.75rem;
-      min-height: 44px;
-      width: 100%;
-      transition: box-shadow var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: grid;
+      gap: var(--space-md);
     }
-    .text-input:focus-visible, .select-input:focus-visible {
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 2px var(--secondary-soft);
-      outline: none;
-    }
-    .toolbar-actions {
+
+    .controls-top-row {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-sm);
-      align-items: center;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-md);
     }
 
-    /* Buttons */
-    .btn {
+    .search-field {
+      flex: 1 1 260px;
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .field-label {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-surface-variant);
+    }
+
+    .text-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      background: var(--surface-card);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+      font-size: 0.9375rem;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+
+    .text-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-container);
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-sm);
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.875rem;
-      line-height: 1.2;
-      padding: 0.625rem 1rem;
-      min-height: 44px;
-      border-radius: var(--rounded);
-      cursor: pointer;
-      border: 1px solid transparent;
-      text-decoration: none;
-      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+      gap: var(--space-xs);
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), transform var(--dur-micro) var(--ease-out);
     }
+
     .btn-primary {
-      background-color: var(--primary);
+      background: var(--primary);
       color: var(--on-primary);
+      border: 1px solid var(--primary);
     }
     .btn-primary:hover {
-      background-color: var(--secondary);
+      background: var(--on-primary-container);
+      border-color: var(--on-primary-container);
     }
+
     .btn-secondary {
-      background-color: var(--surface-container-low);
+      background: var(--surface-card);
       color: var(--on-surface);
-      border-color: var(--outline-variant);
+      border: 1px solid var(--border-warm);
     }
     .btn-secondary:hover {
-      background-color: var(--surface-container-high);
-    }
-    .btn-danger-outline {
-      background-color: var(--surface-container-low);
-      color: var(--error);
-      border-color: var(--outline-variant);
-    }
-    .btn-danger-outline:hover {
-      background-color: var(--error-soft);
-    }
-    .btn-sm {
-      min-height: 40px;
-      padding: 0.45rem 0.8rem;
-      font-size: 0.8125rem;
-    }
-
-    /* Quick Jump Index */
-    .quick-index {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-    .index-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.7rem;
-      min-height: 42px;
       background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      font-family: var(--font-body);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--on-surface);
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: background-color var(--dur-micro) var(--ease-out);
-    }
-    .index-chip:hover {
-      background-color: var(--surface-container);
-    }
-    .index-chip .idx-num {
-      font-family: var(--font-label);
-      font-size: 0.75rem;
-      color: var(--secondary);
+      border-color: var(--outline);
     }
 
-    /* Results status bar */
-    .results-status {
+    .btn-secondary.is-armed {
+      background: var(--error);
+      color: var(--on-error);
+      border-color: var(--error);
+    }
+
+    .controls-bottom-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-sm);
-      border-bottom: var(--section-rule);
-      padding-bottom: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: var(--warm-hairline);
     }
-    .results-count {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+
+    .filter-pill {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-card);
       color: var(--on-surface-variant);
-    }
-    .status-toast {
       font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--positive);
-      min-height: 1.2em;
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
     }
 
-    /* Monument Cards Stack */
-    .cards-stack {
+    .filter-pill:hover {
+      border-color: var(--outline);
+      color: var(--on-surface);
+    }
+
+    .filter-pill[aria-pressed="true"] {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--on-primary);
+    }
+
+    .results-status {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+    }
+
+    .feedback-banner {
+      display: none;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+      border: 1px solid var(--border-emerald);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .feedback-banner.is-visible {
+      display: block;
+    }
+
+    /* Monument Stack */
+    .monuments-list {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: var(--space-lg);
+      gap: var(--space-xl);
     }
 
-    .monument-card-shell {
+    .monument-unit {
+      display: grid;
+      gap: var(--space-sm);
+      scroll-margin-top: var(--space-lg);
+    }
+
+    .monument-unit.is-hidden {
+      display: none;
+    }
+
+    .card-wrapper {
       container-type: inline-size;
-      background: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      overflow: hidden;
-      transition: box-shadow var(--dur-short) var(--ease-out);
-    }
-    .monument-card-shell:hover {
-      box-shadow: var(--shadow-card-hover);
     }
 
+    /* Horizontal Monument Card */
     .monument-card {
+      background: var(--surface-card);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
       display: grid;
-      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
-      align-items: stretch;
+      grid-template-columns: 1fr;
+      transition: box-shadow var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
     }
 
-    @container (max-width: 760px) {
+    .monument-card:hover {
+      box-shadow: var(--soft-shadow-raised);
+    }
+
+    .monument-card.is-visited {
+      border-color: var(--tertiary);
+    }
+
+    @container (min-width: 640px) {
       .monument-card {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(250px, 34%) minmax(0, 1fr);
       }
     }
 
-    /* Left Media Column */
-    .media-pane {
-      background: var(--surface-container);
-      border-right: 1px solid var(--outline-variant);
+    /* Left Horizontal Slot: Photo Upload / Preview */
+    .photo-slot {
+      background: var(--surface-container-low);
+      border-bottom: 1px solid var(--outline-variant);
       padding: var(--space-md);
       display: flex;
       flex-direction: column;
-      gap: var(--space-sm);
       justify-content: space-between;
+      gap: var(--space-sm);
+      min-height: 250px;
     }
-    @container (max-width: 760px) {
-      .media-pane {
-        border-right: none;
-        border-bottom: 1px solid var(--outline-variant);
+
+    @container (min-width: 640px) {
+      .photo-slot {
+        border-bottom: none;
+        border-right: 1px solid var(--outline-variant);
       }
     }
 
-    .media-stage {
-      position: relative;
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
+    .photo-frame {
+      flex: 1 1 auto;
+      min-height: 185px;
+      border: 1.5px dashed var(--outline);
       border-radius: var(--rounded);
-      aspect-ratio: 4 / 3;
-      min-height: 200px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .media-stage.drag-over {
-      box-shadow: inset 0 0 0 2px var(--secondary);
-      background-color: var(--secondary-soft);
-    }
-    .media-stage img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      cursor: zoom-in;
-    }
-    .plate-wrap {
-      width: 100%;
-      height: 100%;
+      background: var(--background);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: var(--space-sm);
-      background: var(--background);
-    }
-    .plate-header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: var(--space-xs);
-    }
-    .plate-badge {
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--secondary);
-      background: var(--secondary-soft);
-      padding: 0.15rem 0.45rem;
-      border-radius: var(--badge-radius);
-    }
-    .plate-svg {
-      width: 100%;
-      height: 145px;
-      display: block;
-    }
-    .plate-hint {
-      font-size: 0.75rem;
-      color: var(--on-surface-variant);
+      justify-content: center;
       text-align: center;
-      margin: 0;
-      border-top: 1px dashed var(--outline-variant);
-      padding-top: var(--space-xs);
-    }
-
-    .photo-overlay-badge {
-      position: absolute;
-      top: var(--space-sm);
-      left: var(--space-sm);
-      background: var(--primary);
-      color: var(--on-primary);
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
-      padding: 0.18rem 0.45rem;
-      border-radius: var(--badge-radius);
-      pointer-events: none;
-    }
-    .photo-expand-btn {
-      position: absolute;
-      bottom: var(--space-sm);
-      right: var(--space-sm);
-      background: var(--surface-container-low);
-      color: var(--on-surface);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: 0.35rem 0.65rem;
-      min-height: 36px;
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      cursor: pointer;
-    }
-    .photo-expand-btn:hover {
-      background: var(--primary);
-      color: var(--on-primary);
-    }
-
-    .thumb-strip {
-      display: flex;
-      align-items: center;
+      padding: var(--space-md);
       gap: var(--space-xs);
-      overflow-x: auto;
-      padding-bottom: 2px;
-    }
-    .thumb-btn {
-      width: 52px;
-      height: 40px;
-      padding: 0;
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--badge-radius);
+      position: relative;
       overflow: hidden;
-      cursor: pointer;
-      flex: 0 0 auto;
-      background: var(--surface-container-low);
     }
-    .thumb-btn.active {
-      box-shadow: 0 0 0 2px var(--secondary);
-      border-color: var(--secondary);
+
+    .photo-frame.has-image {
+      border-style: solid;
+      border-color: var(--outline-variant);
+      padding: 0;
+      background: var(--surface-container);
     }
-    .thumb-btn img {
+
+    .photo-frame img {
       width: 100%;
       height: 100%;
+      min-height: 200px;
+      max-height: 310px;
       object-fit: cover;
       display: block;
     }
 
-    .photo-caption-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: var(--space-xs);
-      align-items: end;
-    }
-    .caption-input {
-      font-family: var(--font-body);
-      font-size: 0.8125rem;
-      color: var(--on-surface);
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline-variant);
-      border-radius: var(--rounded);
-      padding: 0.45rem 0.6rem;
-      min-height: 40px;
-      width: 100%;
+    .photo-empty-icon {
+      color: var(--secondary);
+      opacity: 0.9;
     }
 
-    .media-controls {
+    .photo-empty-title {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--on-surface);
+      margin: var(--space-xs) 0 0 0;
+    }
+
+    .photo-empty-hint {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      line-height: 1.45;
+      margin: 0;
+      max-width: 28ch;
+    }
+
+    .photo-prev-session-note {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--primary);
+      background: var(--primary-container);
+      border: 1px solid var(--border-featured);
+      border-radius: var(--rounded);
+      padding: var(--space-xs) var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+
+    .photo-controls {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-xs);
       align-items: center;
       justify-content: space-between;
+      gap: var(--space-xs);
     }
-    .upload-label {
-      position: relative;
-      overflow: hidden;
-      flex: 1 1 auto;
-    }
-    .visually-hidden-input {
+
+    .file-input-hidden {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -728,349 +744,335 @@
       margin: -1px;
       overflow: hidden;
       clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
       border: 0;
     }
 
-    /* Right Synthesis Content Column */
-    .content-pane {
-      padding: var(--space-lg);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      justify-content: space-between;
-    }
-
-    .card-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: var(--space-md);
-      border-bottom: var(--section-rule);
-      padding-bottom: var(--space-sm);
-    }
-    .card-title-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-    .card-kicker-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-xs);
-    }
-    .index-num {
-      font-family: var(--font-label);
-      font-weight: 600;
-      font-size: var(--label-size);
-      color: var(--secondary);
-      background: var(--surface-container);
-      padding: 0.125rem 0.45rem;
-      border-radius: var(--badge-radius);
-    }
-    .tag-chip {
-      font-family: var(--font-label);
-      font-size: 0.6875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.15rem 0.45rem;
-      border-radius: var(--badge-radius);
-      background: var(--tertiary-soft);
-      color: var(--tertiary);
-      font-weight: 600;
-    }
-    .tag-chip.mn {
-      background: var(--primary-container);
-      color: var(--on-primary-container);
-    }
-    .card-title {
-      font-family: var(--font-headline);
-      font-weight: 600;
-      font-size: var(--headline-size);
-      line-height: 1.18;
-      letter-spacing: -0.015em;
-      margin: 0;
-      color: var(--on-surface);
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-    }
-    .toggle-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
+    .upload-btn {
       min-height: 44px;
-      padding: 0.4rem 0.75rem;
-      border-radius: var(--rounded);
-      border: 1px solid var(--outline-variant);
-      background: var(--surface-container-low);
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded-full);
+      background: var(--surface-card);
+      border: 1px solid var(--border-warm);
       color: var(--on-surface);
-      font-family: var(--font-body);
       font-size: 0.8125rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
-    }
-    .toggle-pill:hover {
-      background-color: var(--surface-container);
-    }
-    .toggle-pill.active-route {
-      background-color: var(--primary-container);
-      color: var(--on-primary-container);
-      border-color: var(--outline);
-    }
-    .toggle-pill.active-visited {
-      background-color: var(--positive-soft);
-      color: var(--positive);
-      border-color: var(--positive);
-    }
-
-    /* 2-Pillar Synthesis Grid */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-md);
-    }
-    @container (max-width: 600px) {
-      .pillars-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .pillar-box {
-      background: var(--background);
-      border: 1px solid var(--outline-variant);
-      border-top: 2px solid var(--secondary);
-      border-radius: var(--rounded);
-      padding: var(--space-md);
-      display: flex;
-      flex-direction: column;
+      display: inline-flex;
+      align-items: center;
       gap: var(--space-xs);
-    }
-    .pillar-box.arch {
-      border-top-color: var(--tertiary);
-    }
-    .pillar-heading {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface);
-      margin: 0;
-    }
-    .pillar-text {
-      font-size: 0.9rem;
-      line-height: 1.58;
-      color: var(--on-surface);
-      margin: 0;
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out);
     }
 
-    /* Personal Field Note Footer inside Card */
-    .card-footer-note {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: var(--space-sm);
-      align-items: end;
-      border-top: 1px solid var(--outline-variant);
-      padding-top: var(--space-sm);
+    .upload-btn:hover {
+      background: var(--primary-container);
+      border-color: var(--primary);
     }
-    .note-badge {
-      font-family: var(--font-label);
-      font-size: 0.7rem;
+
+    .file-input-hidden:focus-visible + .upload-btn {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .remove-photo-btn {
+      min-height: 44px;
+      padding: 0 var(--space-sm);
+      border-radius: var(--rounded);
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--error);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .remove-photo-btn:hover {
+      background: var(--primary-container);
+      border-color: var(--border-featured);
+    }
+
+    .photo-file-caption {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
       color: var(--on-surface-variant);
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
-      padding-bottom: 0.65rem;
-    }
-
-    /* Empty state */
-    .empty-state {
-      background: var(--surface-container-low);
-      border: var(--card-border);
-      border-radius: var(--rounded-lg);
-      padding: var(--space-xl);
-      text-align: center;
-      display: grid;
-      gap: var(--space-sm);
-      justify-items: center;
-    }
-
-    /* Lightbox Modal */
-    .lightbox-backdrop {
-      position: fixed;
-      inset: 0;
-      background: var(--backdrop-scrim);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-md);
-      z-index: 1000;
-    }
-    .lightbox-backdrop.open {
-      display: flex;
-    }
-    .lightbox-dialog {
-      background: var(--surface-container-low);
-      border: 1px solid var(--outline);
-      border-radius: var(--rounded-lg);
-      max-width: 920px;
-      width: 100%;
-      max-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-    .lightbox-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-md);
-      padding: var(--space-md);
-      border-bottom: 1px solid var(--outline-variant);
-      background: var(--surface-container);
-    }
-    .lightbox-title {
-      font-family: var(--font-headline);
-      font-weight: 600;
-      font-size: var(--subhead-size);
-      margin: 0;
-    }
-    .lightbox-body {
-      background: var(--on-surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 240px;
-      max-height: 62vh;
-      overflow: hidden;
-    }
-    .lightbox-body img {
       max-width: 100%;
-      max-height: 62vh;
-      object-fit: contain;
-      display: block;
     }
-    .lightbox-footer {
+
+    /* Right Horizontal Body: Heritage Info */
+    .monument-body {
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-md);
+      align-content: start;
+    }
+
+    .monument-header-bar {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-sm);
-      padding: var(--space-md);
-      background: var(--surface-container-low);
-      border-top: 1px solid var(--outline-variant);
     }
-    .lightbox-caption {
-      font-size: 0.9rem;
+
+    .monument-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .stop-index-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: var(--rounded);
+      background: var(--primary);
+      color: var(--on-primary);
+      letter-spacing: 0.06em;
+    }
+
+    .badge-emerald {
+      background: var(--tertiary-container);
+      color: var(--on-tertiary-container);
+      border: 1px solid var(--border-emerald);
+      padding: 4px 12px;
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .badge-brass {
+      background: var(--secondary-container);
+      color: var(--secondary);
+      border: 1px solid var(--outline-variant);
+      padding: 4px 12px;
+      border-radius: var(--rounded-full);
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .visit-toggle-btn {
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded-full);
+      border: 1px solid var(--border-warm);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+    }
+
+    .visit-toggle-btn:hover {
+      border-color: var(--tertiary);
+      background: var(--tertiary-container);
+    }
+
+    .visit-toggle-btn[aria-pressed="true"] {
+      background: var(--tertiary);
+      border-color: var(--tertiary);
+      color: var(--on-primary);
+    }
+
+    .monument-title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: clamp(1.5rem, 1.25rem + 0.8vw, 1.9rem);
+      line-height: 1.12;
       color: var(--on-surface);
       margin: 0;
     }
-    .lightbox-nav {
-      display: flex;
-      gap: var(--space-sm);
+
+    .monument-epoch {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: var(--space-xs) 0 0 0;
     }
 
-    /* Footer */
-    .aside-box {
-      background: var(--surface-container);
-      border-top: var(--section-rule);
-      padding: var(--space-md);
-      border-radius: var(--rounded);
+    .monument-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    @container (min-width: 780px) {
+      .monument-columns {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: var(--space-lg);
+      }
+    }
+
+    .block-kicker {
+      font-family: var(--font-label);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin: 0 0 var(--space-xs) 0;
+    }
+
+    .monument-synthesis {
+      margin: 0;
+      color: var(--on-surface);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      max-width: 65ch;
+    }
+
+    .highlights-list {
+      margin: 0;
+      padding-left: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+      color: var(--on-surface);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .highlights-list li::marker {
+      color: var(--primary);
+    }
+
+    .monument-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm) var(--space-lg);
+      padding-top: var(--space-sm);
+      border-top: var(--warm-hairline);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .meta-mono {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    /* Field Notes Box immediately below each monument */
+    .field-notes-box {
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
       display: grid;
       gap: var(--space-xs);
     }
-    .aside-title {
-      font-family: var(--font-label);
-      font-size: var(--label-size);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--on-surface);
-      margin: 0;
-    }
-    .aside-text {
-      font-size: 0.8125rem;
-      color: var(--on-surface-variant);
-      margin: 0;
-      max-width: 85ch;
+
+    .field-notes-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
     }
 
-    /* Tablet & Mobile Responsive Rules */
-    @media (max-width: 960px) {
-      .kpi-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .overview-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .toolbar {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .field-notes-label {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--on-surface);
+      cursor: pointer;
+    }
+
+    .field-notes-status {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--on-surface-variant);
+    }
+
+    .field-notes-status.has-notes {
+      color: var(--tertiary);
+      font-weight: 500;
+    }
+
+    .field-notes-textarea {
+      width: 100%;
+      min-height: 92px;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-card);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      resize: vertical;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+
+    .field-notes-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary-container);
+    }
+
+    /* Empty filter state */
+    .empty-filter-state {
+      display: none;
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      text-align: center;
+      gap: var(--space-sm);
+    }
+    .empty-filter-state.is-visible {
+      display: grid;
+      justify-items: center;
+    }
+
+    /* Footer */
+    .sources-footer {
+      margin-top: var(--space-md);
+      padding-top: var(--space-lg);
+      border-top: var(--warm-hairline);
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 900px) {
+      .orientation-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 640px) {
       .page-grid {
-        padding: 0.85rem;
-        gap: 0.9rem;
-      }
-      .kpi-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-sm);
-      }
-      .figure-card {
-        padding: 0.65rem 0.75rem;
-      }
-      .figure-note {
-        font-size: 0.72rem;
-      }
-      .quick-index {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 4px;
-        scrollbar-width: thin;
-      }
-      .toolbar {
-        grid-template-columns: minmax(0, 1fr);
-        gap: var(--space-sm);
-      }
-      .toolbar-actions {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        width: 100%;
-      }
-      .content-pane {
         padding: var(--space-md);
-        gap: var(--space-sm);
+        gap: var(--space-md);
       }
-      .card-actions {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .orientation-panel,
+      .controls-panel,
+      .monument-body,
+      .field-notes-box {
+        padding: var(--space-md);
       }
-      .toggle-pill {
-        width: 100%;
-        padding: 0.4rem 0.5rem;
-        font-size: 0.78rem;
-      }
-      .card-footer-note {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .note-badge {
-        padding-bottom: 0;
-      }
-      .timeline-row {
-        grid-template-columns: 72px minmax(0, 1fr);
-      }
-      .timeline-style {
-        display: none;
+      .timeline-jump-btn {
+        grid-template-columns: 68px minmax(0, 1fr) auto;
       }
     }
 
@@ -1084,1040 +1086,1077 @@
   </style>
 </head>
 <body>
-  <main class="page-grid">
-    <header>
-      <div class="dossier-bar">
-        <div class="dossier-bar-left">
-          <span class="dossier-pill">Peddy Paper</span>
-          <span class="dossier-meta">Viana do Castelo · 7 Monumentos</span>
-        </div>
-        <span class="dossier-meta">Guia de Campo</span>
+  <div class="page-grid">
+    <!-- Cabeçalho -->
+    <header class="notebook-header">
+      <div class="kicker-row">
+        <span class="kicker">Peddy Paper · Viana do Castelo · Guia de Campo</span>
+        <span class="kicker-meta">8 Paragens Patrimoniais · Centro Histórico</span>
       </div>
-      <h1 class="title">Monumentos do Peddy Paper - Viana do Castelo</h1>
-      <p class="standfirst">
-        Explora o centro histórico passo a passo: descobre a história e a arquitetura de cada monumento, assinala as tuas paragens, tira fotografias no local e regista as tuas observações de campo.
+      <h1 class="hero-title">Monumentos do <em>Peddy Paper</em> — Viana do Castelo</h1>
+      <p class="hero-lede">
+        Explora o centro histórico passo a passo: descobre a história e a arquitetura de cada monumento, assinala as tuas paragens no roteiro, insere fotografias do site oficial municipal ou registadas no local e preenche as tuas observações de campo.
       </p>
+      <div class="ornament-rule" aria-hidden="true"><span>◆ Caderno de Exploração Cultural ◆</span></div>
     </header>
 
-    <!-- Compact KPI Summary Strip -->
-    <section class="kpi-grid" aria-label="Indicadores do Peddy Paper">
-      <article class="figure-card">
-        <span class="figure-label">O Meu Progresso</span>
-        <span class="figure-value" id="kpi-progress">0/7 · 0 fotos</span>
-        <span class="figure-note" id="kpi-route-note">0 marcados no roteiro</span>
-      </article>
-      <article class="figure-card">
-        <span class="figure-label">Percurso</span>
-        <span class="figure-value">7 locais</span>
-        <span class="figure-note">Centro histórico de Viana</span>
-      </article>
-      <article class="figure-card">
-        <span class="figure-label">Arco Histórico</span>
-        <span class="figure-value">Séc. XV–XIX</span>
-        <span class="figure-note">De c. 1400 a 1885</span>
-      </article>
-      <article class="figure-card">
-        <span class="figure-label">Classificação</span>
-        <span class="figure-value">2 MN · 1 IIP</span>
-        <span class="figure-note">Património classificado</span>
-      </article>
+    <!-- Indicadores de Progresso e Síntese do Percurso -->
+    <section class="summary-grid" aria-label="Resumo do percurso e progresso">
+      <div class="arch-card is-featured">
+        <span class="arch-label">O Meu Progresso</span>
+        <div class="arch-value" id="progress-ratio">0/8</div>
+        <div class="arch-note" id="progress-sub">0 paragens visitadas · 0 notas</div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <span class="arch-label">Percurso</span>
+        <div class="arch-value">8 locais</div>
+        <div class="arch-note">Centro histórico de Viana</div>
+      </div>
+
+      <div class="arch-card">
+        <span class="arch-label">Arco Histórico</span>
+        <div class="arch-value">Séc. XV–XX</div>
+        <div class="arch-note">De c. 1400 a 1997</div>
+      </div>
+
+      <div class="arch-card">
+        <span class="arch-label">Classificação</span>
+        <div class="arch-value">2 MN · 1 IIP</div>
+        <div class="arch-note">Mais Rede Portuguesa de Museus</div>
+      </div>
     </section>
 
-    <!-- Quick Jump Index (Single-row swipeable on mobile) -->
-    <nav class="quick-index" aria-label="Acesso rápido aos 7 monumentos" id="quick-index"></nav>
-
-    <!-- Collapsible Chronology & Map -->
-    <details class="collapsible-panel" id="details-overview">
-      <summary class="collapsible-summary">
-        <span class="collapsible-summary-left">
-          <i data-lucide="map" aria-hidden="true"></i>
-          <span>Mapa de Proximidade e Linha Cronológica</span>
-        </span>
-        <i data-lucide="chevron-down" class="chevron" aria-hidden="true"></i>
-      </summary>
-      <div class="collapsible-body">
-        <div class="overview-grid">
-          <div class="panel-card">
-            <div class="panel-header">
-              <h2 class="panel-title">Linha Cronológica (Séc. XV–XIX)</h2>
-              <span class="panel-sub">Toca para ir ao cartão</span>
-            </div>
-            <div class="timeline-list" id="timeline-list"></div>
-          </div>
-
-          <div class="panel-card">
-            <div class="panel-header">
-              <h2 class="panel-title">Proximidade no Centro Histórico</h2>
-              <span class="panel-sub">6 locais com GPS</span>
-            </div>
-            <div class="geo-frame">
-              <svg class="geo-svg" id="geo-svg" viewBox="0 0 420 210" role="img" aria-label="Diagrama relativo das coordenadas geográficas de seis monumentos no centro histórico de Viana do Castelo"></svg>
-              <p class="geo-caption">
-                Projeção proporcional a partir das coordenadas municipais (cerca de 430 m Norte–Sul por 290 m Oeste–Este). A Igreja Matriz (Sé Catedral) não apresenta coordenadas GPS na fonte.
-              </p>
-            </div>
-          </div>
+    <!-- Mapa de Proximidade e Linha Cronológica -->
+    <section class="orientation-panel" aria-labelledby="orientation-heading">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-heading" id="orientation-heading">Mapa de Proximidade e Linha Cronológica</h2>
+          <p class="section-subtitle">
+            Toca num marcador do mapa ou numa época da linha cronológica para saltar diretamente para o cartão do monumento.
+          </p>
         </div>
       </div>
-    </details>
 
-    <!-- Collapsible Filters & Export Toolbar -->
-    <details class="collapsible-panel" id="details-toolbar">
-      <summary class="collapsible-summary">
-        <span class="collapsible-summary-left">
-          <i data-lucide="sliders-horizontal" aria-hidden="true"></i>
-          <span>Pesquisar, Filtrar e Exportar Registos</span>
-        </span>
-        <i data-lucide="chevron-down" class="chevron" aria-hidden="true"></i>
-      </summary>
-      <div class="collapsible-body">
-        <div class="toolbar">
-          <div class="field-group">
-            <label class="field-label" for="search-input">Pesquisar monumento, estilo ou autor</label>
-            <input class="text-input" type="search" id="search-input" placeholder="Ex.: rococó, Nasoni, manuelino…" oninput="handleSearchChange(this.value)">
+      <div class="orientation-grid">
+        <div class="map-box">
+          <div class="map-svg-wrap" id="proximity-map-container">
+            <!-- SVG gerado dinamicamente a partir das coordenadas municipais -->
           </div>
+          <p class="map-footnote">
+            Projeção vetorial proporcional a partir das 6 coordenadas municipais disponíveis (cerca de 430 m Norte–Sul por 290 m Oeste–Este). A Igreja Matriz (Sé Catedral) não apresenta coordenadas GPS na fonte e o Museu do Traje enquadra-se na Praça da República, junto aos Antigos Paços do Concelho.
+          </p>
+        </div>
 
-          <div class="field-group">
-            <label class="field-label" for="epoch-select">Época predominante</label>
-            <select class="select-input" id="epoch-select" onchange="handleEpochChange(this.value)">
-              <option value="all">Todas as épocas (7)</option>
-              <option value="xv">Século XV · Idade Média / Transição</option>
-              <option value="xvi">Século XVI · Quinhentista / Manuelino</option>
-              <option value="xviii">Século XVIII · Rococó</option>
-              <option value="xix">Século XIX · Arquitetura Teatral</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label" for="status-select">Estado da visita</label>
-            <select class="select-input" id="status-select" onchange="handleStatusChange(this.value)">
-              <option value="all">Todos os monumentos</option>
-              <option value="classified">Com classificação (MN / IIP)</option>
-              <option value="route">No meu roteiro</option>
-              <option value="visited">Já visitados</option>
-              <option value="has-photos">Com fotografias carregadas</option>
-            </select>
-          </div>
-
-          <div class="toolbar-actions">
-            <button type="button" class="btn btn-primary" onclick="exportSummary()">
-              <i data-lucide="download" aria-hidden="true"></i>
-              Exportar TXT
-            </button>
-            <button type="button" class="btn btn-danger-outline" id="reset-btn" onclick="resetUserState(this)">
-              Repor dados
-            </button>
-          </div>
+        <div class="timeline-box">
+          <h3 class="timeline-title">Linha Cronológica (Séc. XV–XX)</h3>
+          <ol class="timeline-list" id="timeline-list">
+            <!-- Preenchido via JavaScript -->
+          </ol>
         </div>
       </div>
-    </details>
+    </section>
 
-    <!-- Results Status -->
-    <div class="results-status">
-      <span class="results-count" id="results-count">A mostrar 7 de 7 monumentos</span>
-      <span class="status-toast" id="status-toast" role="status" aria-live="polite"></span>
-    </div>
+    <!-- Pesquisa, Filtros e Exportação -->
+    <section class="controls-panel" aria-label="Pesquisar, filtrar e exportar registos">
+      <div class="controls-top-row">
+        <div class="search-field">
+          <label class="field-label" for="search-input">Pesquisar monumento, época, rua ou destaque</label>
+          <input
+            type="search"
+            id="search-input"
+            class="text-input"
+            placeholder="Ex.: Rococó, Manuelino, Praça da República, Traje…"
+          >
+        </div>
 
-    <!-- Cards Stack -->
-    <section class="cards-stack" id="cards-stack" aria-label="Cartões dos monumentos"></section>
+        <div class="action-row">
+          <button type="button" class="btn-primary" id="export-notes-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Exportar notas e progresso
+          </button>
+          <button type="button" class="btn-secondary" id="reset-progress-btn" data-armed="false">
+            Reiniciar caderno
+          </button>
+        </div>
+      </div>
 
-    <!-- Footer -->
-    <footer class="aside-box">
-      <h2 class="aside-title">Fontes &amp; Notas de Utilização</h2>
-      <p class="aside-text">
-        Informação histórica e arquitetónica sintetizada a partir das fichas patrimoniais municipais do Município de Viana do Castelo («Visite Viana — Património Cultural»).
-      </p>
-      <p class="aside-text">
-        <strong>Os teus dados:</strong> As marcações de visita, o roteiro e as notas pessoais ficam guardados automaticamente neste telemóvel. As fotografias carregadas ficam visíveis durante a sessão atual — guarda-as também na galeria do telemóvel se precisares delas depois da atividade.
-      </p>
+      <div class="controls-bottom-row">
+        <div class="filter-pills" role="group" aria-label="Filtrar monumentos">
+          <button type="button" class="filter-pill" data-filter="all" aria-pressed="true">Todos (8)</button>
+          <button type="button" class="filter-pill" data-filter="pending" aria-pressed="false">Por visitar</button>
+          <button type="button" class="filter-pill" data-filter="visited" aria-pressed="false">Visitados</button>
+          <button type="button" class="filter-pill" data-filter="with-notes" aria-pressed="false">Com notas</button>
+          <button type="button" class="filter-pill" data-filter="classified" aria-pressed="false">Património classificado</button>
+        </div>
+        <span class="results-status" id="results-status">A mostrar 8 de 8 monumentos</span>
+      </div>
+
+      <div class="feedback-banner" id="feedback-banner" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Lista de Cartões Horizontais + Notas de Campo -->
+    <main aria-label="Cartões dos 8 monumentos do percurso">
+      <div class="monuments-list" id="monuments-list">
+        <!-- Preenchido via JavaScript -->
+      </div>
+
+      <div class="empty-filter-state" id="empty-filter-state">
+        <p style="margin: 0; font-weight: 600;">Nenhum monumento corresponde aos filtros selecionados.</p>
+        <p style="margin: 0; color: var(--on-surface-variant); font-size: 0.9rem;">
+          Limpa a pesquisa ou seleciona «Todos (8)» para voltar a visualizar o roteiro completo.
+        </p>
+        <button type="button" class="btn-secondary" id="clear-filters-btn">Mostrar todos os monumentos</button>
+      </div>
+    </main>
+
+    <!-- Fontes -->
+    <footer class="sources-footer">
+      <strong>Fontes e referências documentais:</strong> Fichas patrimoniais e museológicas do Município de Viana do Castelo (<em>cm-viana-castelo.pt</em> — Visite Viana / Património Cultural e Museus), registos da Direção-Geral do Património Cultural (<em>imovel.patrimoniocultural.gov.pt</em>) e estrutura do guia <em>Monumentos do Peddy Paper - Viana do Castelo</em>. As fotografias carregadas neste caderno permanecem localmente na sessão do navegador e não são enviadas para servidores externos.
     </footer>
-  </main>
-
-  <!-- Photo Lightbox Modal -->
-  <div class="lightbox-backdrop" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" onclick="handleBackdropClick(event)">
-    <div class="lightbox-dialog">
-      <div class="lightbox-header">
-        <h2 class="lightbox-title" id="lightbox-title">Fotografia do monumento</h2>
-        <button type="button" class="btn btn-secondary btn-sm" onclick="closeLightbox()" aria-label="Fechar visualizador">
-          <i data-lucide="x" aria-hidden="true"></i>
-          Fechar
-        </button>
-      </div>
-      <div class="lightbox-body" id="lightbox-body"></div>
-      <div class="lightbox-footer">
-        <p class="lightbox-caption" id="lightbox-caption"></p>
-        <div class="lightbox-nav">
-          <button type="button" class="btn btn-secondary btn-sm" id="lb-prev" onclick="stepLightbox(-1)">Anterior</button>
-          <button type="button" class="btn btn-secondary btn-sm" id="lb-next" onclick="stepLightbox(1)">Seguinte</button>
-        </div>
-      </div>
-    </div>
   </div>
 
+  <api-shim></api-shim>
   <script>
-    const STORAGE_KEY = 'peddy_paper_viana_v1';
-
     const MONUMENTS = [
       {
-        id: 'pacos-concelho',
-        index: '01',
-        name: 'Antigos Paços do Concelho',
-        epochKey: 'xvi',
-        epochLabel: 'Século XVI',
-        timelineYear: 'Séc. XVI',
-        styleTag: 'Alçado Quinhentista',
-        classification: 'Monumento Nacional (desde 1910)',
+        id: `antigos-pacos`,
+        order: `01`,
+        name: `Antigos Paços do Concelho`,
+        shortName: `Antigos Paços`,
+        epoch: `Século XVI · Arquitetura Civil Quinhentista`,
+        chronologyLabel: `Séc. XVI`,
+        chronologyYear: 1550,
+        classification: `Monumento Nacional (1910)`,
         isClassified: true,
-        classificationShort: 'MN · 1910',
-        history: 'Edifício datado do século XVI que foi outrora a sede da edilidade municipal de Viana do Castelo. No passado, o piso térreo oferecia abrigo à população e servia de local de trabalho aos escribas, que ali redigiam requerimentos e outros documentos para cidadãos iletrados. Classificado como Monumento Nacional em 1910 (código patrimonial 70305).',
-        architecture: 'Distingue-se pelo elegante alçado de dois pisos. A organização em dois níveis articulava a função cívica superior da câmara com a galeria térrea aberta ao quotidiano urbano e aos ofícios públicos dos escribas.',
-        lat: 41.6935725,
-        lon: -8.8284868,
-        plateCode: 'PRANCHA 01 · SÉC. XVI'
+        address: `Praça da República, 58 · 4900-530 Viana do Castelo`,
+        gps: { lat: 41.69357251002818, lon: -8.828486759002786 },
+        gpsText: `41.69357° N, 8.82849° W`,
+        hoursText: `Acolhe exposições temporárias ao longo do ano`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural · DGPC 70305)`,
+        synthesis: `Edifício datado do século XVI, outrora sede da edilidade municipal vianense. No passado, o piso térreo oferecia abrigo à população e servia de espaço de trabalho aos escribas, que ali redigiam requerimentos e outros documentos para os cidadãos iletrados. Atualmente assume um papel de destaque na vida cultural e educativa da cidade, acolhendo exposições temporárias.`,
+        highlights: [
+          `Elegante alçado quinhentista de dois pisos voltado para a Praça da República`,
+          `Piso térreo aberto que servia de abrigo popular e local de trabalho aos antigos escribas`,
+          `Espaço dinamizador de conhecimento, fruição artística e valorização do património local`,
+          `Classificado como Monumento Nacional (MN) desde 1910 na categoria de monumento`
+        ]
       },
       {
-        id: 'capela-malheiras',
-        index: '02',
-        name: 'Capela das Malheiras',
-        epochKey: 'xviii',
-        epochLabel: 'Século XVIII',
-        timelineYear: 'Séc. XVIII',
-        styleTag: 'Rococó',
-        classification: 'Sem classificação mencionada na fonte',
+        id: `capela-malheiras`,
+        order: `02`,
+        name: `Capela das Malheiras`,
+        shortName: `Capela das Malheiras`,
+        epoch: `Século XVIII · Arquitetura Rococó Portuguesa`,
+        chronologyLabel: `Séc. XVIII`,
+        chronologyYear: 1750,
+        classification: `Arquitetura Religiosa Rococó`,
         isClassified: false,
-        classificationShort: 'Rococó',
-        history: 'Recebe a designação pela ligação à família proprietária, os Malheiro Reimão. Foi mandada construir por D. António do Desterro Malheiro, então Bispo do Rio de Janeiro, constituindo um testemunho de devoção e mecenato setecentista.',
-        architecture: 'Um dos mais notáveis exemplares da arquitetura rococó portuguesa. A elegante fachada é atribuída por alguns autores a Nicolau Nasoni ou à sua escola. No interior destaca-se o magnífico retábulo em talha policromada, considerado por Robert Smith um dos melhores exemplos de talha minhota em estilo rococó.',
-        lat: 41.6938163,
-        lon: -8.8269361,
-        plateCode: 'PRANCHA 02 · ROCOCÓ'
+        address: `Rua Gago Coutinho, 66 · 4900-510 Viana do Castelo`,
+        gps: { lat: 41.69381627114292, lon: -8.826936131385096 },
+        gpsText: `41.69382° N, 8.82694° W`,
+        hoursText: `Interior visitável na noite de visita das capelas e igrejas (Páscoa)`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural — Capela das Malheiras)`,
+        synthesis: `Assim designada pela ligação à família proprietária, os Malheiro Reimão, foi mandada construir por D. António do Desterro Malheiro, então Bispo do Rio de Janeiro. É um dos mais notáveis exemplares da arquitetura rococó portuguesa, unindo a graça da fachada a uma talha interior excecional.`,
+        highlights: [
+          `Elegante fachada rococó atribuída por alguns autores a Nicolau Nasoni ou à sua escola`,
+          `Magnífico retábulo em talha policromada no interior da capela`,
+          `Considerado por Robert Smith um dos melhores exemplos de talha minhota em estilo rococó`,
+          `Abertura tradicional do interior na noite pascal de visita às capelas e igrejas`
+        ]
       },
       {
-        id: 'casa-nichos',
-        index: '03',
-        name: 'Casa dos Nichos – Núcleo Museológico de Arqueologia',
-        epochKey: 'xv',
-        epochLabel: 'Século XV',
-        timelineYear: 'Séc. XV',
-        styleTag: 'Arquitetura Civil Medieval',
-        classification: 'Núcleo Museológico Municipal',
+        id: `casa-nichos`,
+        order: `03`,
+        name: `Casa dos Nichos – Núcleo Museológico de Arqueologia`,
+        shortName: `Casa dos Nichos`,
+        epoch: `Século XV · Arquitetura Civil Medieval`,
+        chronologyLabel: `Séc. XV`,
+        chronologyYear: 1450,
+        classification: `Núcleo Museológico Municipal`,
         isClassified: false,
-        classificationShort: 'Museologia',
-        history: 'Edifício do século XV (Arquitetura Civil – Idade Média), recentemente recuperado para acolher uma área expositiva dedicada ao espólio arqueológico do concelho de Viana do Castelo, com destaque para a Pré-história, a Idade do Ferro e a Romanização.',
-        architecture: 'Preserva a matriz de arquitetura civil medieval do século XV adaptada a fins museológicos e pedagógicos. Integra meios multimédia dedicados ao património concelhio, como a citânia de Santa Luzia, as sepulturas medievais de Santa Maria de Geraz do Lima e as gravuras rupestres de Carreço.',
-        lat: 41.691756,
-        lon: -8.8280153,
-        plateCode: 'PRANCHA 03 · SÉC. XV'
+        address: `Rua de Viana, 98 · 4900-509 Viana do Castelo`,
+        gps: { lat: 41.691756, lon: -8.828015299999999 },
+        gpsText: `41°41'30.14"N · 8°49'40.68"W`,
+        hoursText: `Seg. a sex.: 9h00–13h00 e 14h00–17h00 (visitas guiadas por marcação)`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural — Casa dos Nichos)`,
+        synthesis: `Edifício do século XV recuperado para acolher uma área expositiva com parte do espólio arqueológico do concelho de Viana do Castelo, destacando a Pré-história, a Idade do Ferro e a Romanização. Com forte vocação pedagógica, disponibiliza meios multimédia sobre o património arqueológico concelhio.`,
+        highlights: [
+          `Exemplar de arquitetura civil medieval (séc. XV) requalificado para museologia`,
+          `Espólio arqueológico da Pré-história, Idade do Ferro e período da Romanização`,
+          `Meios multimédia sobre a Citânia de Santa Luzia e as gravuras rupestres de Carreço`,
+          `Informação interpretativa sobre as sepulturas medievais de Santa Maria de Geraz do Lima`
+        ]
       },
       {
-        id: 'estatua-viana',
-        index: '04',
-        name: 'Estátua de Viana',
-        epochKey: 'xviii',
-        epochLabel: 'Século XVIII (1774)',
-        timelineYear: '1774',
-        styleTag: 'Escultura Rococó',
-        classification: 'Monumento Urbano Setecentista',
+        id: `estatua-viana`,
+        order: `04`,
+        name: `Estátua de Viana`,
+        shortName: `Estátua de Viana`,
+        epoch: `1774 (Século XVIII) · Escultura e Monumento Rococó`,
+        chronologyLabel: `1774`,
+        chronologyYear: 1774,
+        classification: `Monumento Cívico Setecentista`,
         isClassified: false,
-        classificationShort: '1774 · Rococó',
-        history: 'Monumento do século XVIII, mandado construir em 1774 por José António Freire de Andrade, Governador de Armas da província do Minho e 3.º conde da Bobadela, celebrando a identidade e a projeção marítima da cidade.',
-        architecture: 'Conjunto escultórico em estilo rococó dominado por uma figura feminina de vestes ondulantes segurando uma caravela, símbolo de Viana do Castelo e da sua vocação marinheira. Os quatro bustos que rematam as esquinas do pedestal simbolizam os continentes europeu, asiático, africano e americano («quatro cantos do mundo» e tradição mareante e mercadora).',
-        lat: 41.692599,
-        lon: -8.8259482,
-        plateCode: 'PRANCHA 04 · 1774'
+        address: `Jardim Público, Largo João Tomás da Costa · 4900-509 Viana do Castelo`,
+        gps: { lat: 41.69259897624103, lon: -8.825948235179865 },
+        gpsText: `41.69260° N, 8.82595° W`,
+        hoursText: `Espaço público exterior (Jardim Público)`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural — Estátua de Viana)`,
+        synthesis: `Monumento do século XVIII mandado construir em 1774 por José António Freire de Andrade, Governador de Armas da província do Minho e 3.º Conde da Bobadela. O conjunto escultórico em estilo rococó evoca a identidade marítima e mercantil de Viana do Castelo.`,
+        highlights: [
+          `Figura feminina de vestes ondulantes segurando uma caravela no topo do conjunto`,
+          `Alegoria direta a Viana do Castelo e à sua histórica vocação marinheira`,
+          `Quatro bustos nos cantos do pedestal simbolizando Europa, Ásia, África e América`,
+          `Alusão aos «quatro cantos do mundo» e à tradição mareante e mercadora dos vianenses`
+        ]
       },
       {
-        id: 'igreja-matriz',
-        index: '05',
-        name: 'Igreja Matriz (Sé Catedral) de Viana do Castelo',
-        epochKey: 'xv',
-        epochLabel: 'Século XV (c. 1400–1483)',
-        timelineYear: 'c. 1400–1483',
-        styleTag: 'Transição Românica e Gótico',
-        classification: 'Imóvel de Interesse Público (desde 1953)',
+        id: `igreja-matriz`,
+        order: `05`,
+        name: `Igreja Matriz (Sé Catedral) de Viana do Castelo`,
+        shortName: `Igreja Matriz (Sé)`,
+        epoch: `c. 1400–1483 (Século XV) · Transição Românica, Gótico e Revivalismos`,
+        chronologyLabel: `c. 1400–1483`,
+        chronologyYear: 1400,
+        classification: `Imóvel de Interesse Público (1953)`,
         isClassified: true,
-        classificationShort: 'IIP · 1953',
-        history: 'Situada no coração do centro histórico, a construção teve início por volta de 1400 na Laje — ou penedo — da Praça de Armas, junto à Torre de Menagem, o ponto mais elevado do antigo burgo, prolongando-se as obras até 1483. Classificada como Imóvel de Interesse Público desde 1953.',
-        architecture: 'Notável templo do século XV com características de transição românica, integrando elementos góticos e revivalistas, evidentes sobretudo no seu portal e na imponente rosácea que o coroam.',
-        lat: null,
-        lon: null,
-        plateCode: 'PRANCHA 05 · C. 1400'
+        address: `Largo do Instituto Histórico do Minho, 11 · 4900-526 Viana do Castelo`,
+        gps: null,
+        gpsText: `Sem coordenadas GPS na fonte municipal`,
+        hoursText: `Seg. a dom.: 8h00–12h00 e 14h00–16h30 · Missa às 17h30`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural — Igreja Matriz / Sé Catedral)`,
+        synthesis: `Situada no coração do centro histórico, na Laje — ou penedo — da Praça de Armas, junto à Torre de Menagem, o ponto mais elevado do antigo burgo. A construção iniciou-se por volta de 1400 e prolongou-se até 1483. Hoje Sé Catedral, está classificada como Imóvel de Interesse Público desde 1953.`,
+        highlights: [
+          `Notável templo quatrocentista de transição românica integrando elementos góticos e revivalistas`,
+          `Portal principal e imponente rosácea que o coroa na fachada`,
+          `Implantação histórica no penedo mais elevado do antigo burgo junto à Torre de Menagem`,
+          `Classificada como Imóvel de Interesse Público (IIP) desde 1953`
+        ]
       },
       {
-        id: 'palacio-viscondes',
-        index: '06',
-        name: 'Palácio dos Viscondes da Carreira',
-        epochKey: 'xvi',
-        epochLabel: 'Século XVI',
-        timelineYear: 'Meados Séc. XVI',
-        styleTag: 'Traça Manuelina',
-        classification: 'Monumento Nacional (desde 1910)',
+        id: `palacio-carreira`,
+        order: `06`,
+        name: `Palácio dos Viscondes da Carreira (Câmara Municipal)`,
+        shortName: `Palácio Viscondes Carreira`,
+        epoch: `Meados do Século XVI · Traça Manuelina e acrescentos posteriores`,
+        chronologyLabel: `Meados Séc. XVI`,
+        chronologyYear: 1560,
+        classification: `Monumento Nacional (1910)`,
         isClassified: true,
-        classificationShort: 'MN · 1910',
-        history: 'Erguido em meados do século XVI como Palácio dos Abreu Távora — mais tarde conhecido como Palácio dos Viscondes da Carreira — é reconhecido como uma das mais notáveis casas senhoriais de Viana do Castelo. Classificado como Monumento Nacional em 1910 (código patrimonial 70308). Desde 1972 acolhe a Câmara Municipal.',
-        architecture: 'Destacam-se na fachada as elegantes janelas e portas de traça manuelina, cuja expressão foi melhorada pelas intervenções e acrescentos realizados ao longo dos séculos, preservando, realçando e valorizando o conjunto arquitetónico.',
-        lat: 41.694682,
-        lon: -8.8293761,
-        plateCode: 'PRANCHA 06 · MANUELINO'
+        address: `Passeio das Mordomas da Romaria · 4900-350 Viana do Castelo`,
+        gps: { lat: 41.694681990156404, lon: -8.829376101493835 },
+        gpsText: `41.69468° N, 8.82938° W`,
+        hoursText: `Sede da Câmara Municipal de Viana do Castelo desde 1972`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural · DGPC 70308)`,
+        synthesis: `Erguido em meados do século XVI como Palácio dos Abreu Távora — mais tarde conhecido como Palácio dos Viscondes da Carreira —, é unanimemente reconhecido como uma das mais notáveis casas senhoriais de Viana do Castelo. Desde 1972 acolhe a Câmara Municipal e é Monumento Nacional desde 1910.`,
+        highlights: [
+          `Elegantes janelas e portas de traça manuelina na fachada nobre`,
+          `Intervenções e acrescentos seculares que preservaram e valorizaram o conjunto`,
+          `Uma das mais importantes casas senhoriais quinhentistas da cidade`,
+          `Classificado como Monumento Nacional (MN) desde 1910; Câmara Municipal desde 1972`
+        ]
       },
       {
-        id: 'teatro-sa-miranda',
-        index: '07',
-        name: 'Teatro Sá de Miranda',
-        epochKey: 'xix',
-        epochLabel: 'Século XIX (1875–1885)',
-        timelineYear: '1875–1885',
-        styleTag: 'Arquitetura Teatral Italiana',
-        classification: 'Equipamento Cultural Municipal',
+        id: `teatro-sa-miranda`,
+        order: `07`,
+        name: `Teatro Sá de Miranda`,
+        shortName: `Teatro Sá de Miranda`,
+        epoch: `1875–1885 (Século XIX) · Arquitetura Teatral Italiana`,
+        chronologyLabel: `1875–1885`,
+        chronologyYear: 1885,
+        classification: `Edifício Cultural Municipal`,
         isClassified: false,
-        classificationShort: 'Inaug. 1885',
-        history: 'Mandado construir em 1875 e inaugurado a 29 de abril de 1885. Em 1985 foi adquirido pela Câmara Municipal, que promoveu obras de beneficiação. Mantém-se como uma das principais referências culturais da região, com programação artística diversificada.',
-        architecture: 'Notável exemplo de arquitetura teatral de inspiração italiana, projetado pelo arquiteto José Geraldo da Silva Sardinha. O património artístico inclui o pano de boca desenhado por Luigi Manini e pintado por Hercole Labertini, bem como a pintura decorativa do teto da autoria de João Baptista do Rio.',
-        lat: 41.6956525,
-        lon: -8.8287825,
-        plateCode: 'PRANCHA 07 · 1885'
+        address: `Rua de Sá de Miranda · 4900-533 Viana do Castelo`,
+        gps: { lat: 41.695652499999994, lon: -8.828782526990727 },
+        gpsText: `41.69565° N, 8.82878° W`,
+        hoursText: `Programação cultural regular · Tel. +351 258 809 382`,
+        officialSource: `cm-viana-castelo.pt (Património Cultural — Teatro Sá de Miranda)`,
+        synthesis: `Um dos mais emblemáticos edifícios culturais de Viana do Castelo, mandado construir em 1875 segundo projeto do arquiteto José Geraldo da Silva Sardinha e inaugurado a 29 de abril de 1885. Adquirido pela Câmara Municipal em 1985, mantém-se como referência artística e cultural da região.`,
+        highlights: [
+          `Notável exemplo da arquitetura teatral oitocentista de inspiração italiana`,
+          `Magnífico pano de boca desenhado por Luigi Manini e pintado por Hercole Labertini`,
+          `Pintura decorativa do teto da sala executada por João Baptista do Rio`,
+          `Obras continuadas de beneficiação desde a aquisição municipal em 1985`
+        ]
+      },
+      {
+        id: `museu-traje`,
+        order: `08`,
+        name: `Museu do Traje de Viana do Castelo`,
+        shortName: `Museu do Traje`,
+        epoch: `Fundação em 1997 · Enquadramento na Praça da República`,
+        chronologyLabel: `1997`,
+        chronologyYear: 1997,
+        classification: `Rede Portuguesa de Museus`,
+        isClassified: true,
+        address: `Praça da República · Centro Histórico de Viana do Castelo`,
+        gps: null,
+        gpsText: `Enquadrado na Praça da República (sem GPS autónomo na fonte)`,
+        hoursText: `Equipamento museológico sob tutela municipal`,
+        officialSource: `cm-viana-castelo.pt (Museus e espaços museológicos — Museu do Traje)`,
+        synthesis: `Inaugurado em 1997 e enquadrado na Praça da República — sala de visitas histórica da cidade —, o Museu do Traje nasceu com a missão de preservar, estudar e divulgar o traje à vianesa e a identidade etnográfica da região. A sua consolidação e qualificação sob tutela municipal culminaram na integração na Rede Portuguesa de Museus.`,
+        highlights: [
+          `Enquadramento urbano privilegiado na histórica Praça da República`,
+          `Fundado em 1997 para salvaguardar o traje à vianesa e as tradições têxteis e etnográficas`,
+          `Evolução contínua de reservas, exposição permanente e programação sob tutela municipal`,
+          `Qualidade museológica reconhecida pela integração na Rede Portuguesa de Museus`
+        ]
       }
     ];
 
-    /* Persistent state stored locally on the student's browser (localStorage) */
-    let appState = {
-      search: '',
-      epoch: 'all',
-      status: 'all',
-      visited: [],
-      route: [],
-      notes: {}
+    const appState = {
+      visitedIds: [],
+      notesById: {},
+      photoNamesById: {},
+      sessionPhotoUrlsById: {},
+      activeFilter: `all`,
+      searchQuery: ``
     };
 
-    /* Session-only uploaded photos using browser Object URLs */
-    const sessionPhotos = {};
-    const activePhotoIndex = {};
-    const forcePlateMode = {};
-    let lightboxState = { monumentId: null, index: 0 };
+    let saveTimer = null;
 
-    function renderPlateSvg(id) {
-      if (id === 'pacos-concelho') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <rect x="28" y="28" width="244" height="114" fill="none" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <line x1="20" y1="28" x2="280" y2="28" stroke="var(--on-surface)" stroke-width="2.5"/>
-          <line x1="28" y1="84" x2="272" y2="84" stroke="var(--secondary)" stroke-width="1.2"/>
-          <rect x="52" y="42" width="32" height="28" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <rect x="108" y="42" width="32" height="28" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <rect x="164" y="42" width="32" height="28" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <rect x="220" y="42" width="32" height="28" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <path d="M54 142 V108 A16 16 0 0 1 86 108 V142" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M110 142 V108 A16 16 0 0 1 142 108 V142" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M166 142 V108 A16 16 0 0 1 198 108 V142" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M222 142 V108 A16 16 0 0 1 254 108 V142" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <rect x="132" y="12" width="36" height="16" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1"/>
-          <line x1="16" y1="142" x2="284" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
+    function getApi() {
+      return window.notebookAppApi || null;
+    }
+
+    async function persistState() {
+      const api = getApi();
+      if (!api || typeof api.setAppState !== `function`) return;
+      try {
+        await api.setAppState({
+          visitedIds: appState.visitedIds,
+          notesById: appState.notesById,
+          photoNamesById: appState.photoNamesById,
+          activeFilter: appState.activeFilter,
+          searchQuery: appState.searchQuery
+        });
+      } catch (err) {
+        // Ignora falha silenciosa de rede no sandbox
       }
-      if (id === 'capela-malheiras') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <path d="M84 142 V64 Q150 18 216 64 V142 Z" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <path d="M98 62 Q150 28 202 62" fill="none" stroke="var(--secondary)" stroke-width="1.4"/>
-          <circle cx="150" cy="64" r="14" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <path d="M130 142 V104 Q150 90 170 104 V142 Z" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <path d="M64 142 Q84 110 84 82" fill="none" stroke="var(--tertiary)" stroke-width="1.5"/>
-          <path d="M236 142 Q216 110 216 82" fill="none" stroke="var(--tertiary)" stroke-width="1.5"/>
-          <line x1="150" y1="14" x2="150" y2="30" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <line x1="142" y1="21" x2="158" y2="21" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <line x1="40" y1="142" x2="260" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
+    }
+
+    function schedulePersist() {
+      if (saveTimer) clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () {
+        persistState();
+      }, 280);
+    }
+
+    function showBanner(message) {
+      const banner = document.getElementById(`feedback-banner`);
+      if (!banner) return;
+      banner.textContent = message;
+      banner.classList.add(`is-visible`);
+      setTimeout(function () {
+        banner.classList.remove(`is-visible`);
+      }, 4200);
+    }
+
+    function renderProximityMap() {
+      const container = document.getElementById(`proximity-map-container`);
+      if (!container) return;
+
+      const mapped = MONUMENTS.filter(function (m) {
+        return m.gps !== null;
+      });
+
+      const lats = mapped.map(function (m) { return m.gps.lat; });
+      const lons = mapped.map(function (m) { return m.gps.lon; });
+      const minLat = Math.min.apply(null, lats);
+      const maxLat = Math.max.apply(null, lats);
+      const minLon = Math.min.apply(null, lons);
+      const maxLon = Math.max.apply(null, lons);
+
+      const midLatRad = ((minLat + maxLat) / 2) * (Math.PI / 180);
+      const cosLat = Math.cos(midLatRad);
+
+      const widthMeters = (maxLon - minLon) * 111320 * cosLat;
+      const heightMeters = (maxLat - minLat) * 111320;
+
+      const svgW = 540;
+      const svgH = 340;
+      const padX = 95;
+      const padY = 44;
+      const drawW = svgW - padX * 2;
+      const drawH = svgH - padY * 2;
+
+      const scale = Math.min(drawW / widthMeters, drawH / heightMeters);
+      const usedW = widthMeters * scale;
+      const usedH = heightMeters * scale;
+      const offsetX = (svgW - usedW) / 2;
+      const offsetY = (svgH - usedH) / 2;
+
+      function projectPoint(gps) {
+        const xm = (gps.lon - minLon) * 111320 * cosLat;
+        const ym = (maxLat - gps.lat) * 111320;
+        return {
+          x: Math.round((offsetX + xm * scale) * 10) / 10,
+          y: Math.round((offsetY + ym * scale) * 10) / 10
+        };
       }
-      if (id === 'casa-nichos') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <rect x="44" y="34" width="212" height="108" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <line x1="36" y1="34" x2="264" y2="34" stroke="var(--on-surface)" stroke-width="2"/>
-          <path d="M74 96 V66 Q88 48 102 66 V96 Z" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <path d="M136 96 V66 Q150 48 164 66 V96 Z" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <path d="M198 96 V66 Q212 48 226 66 V96 Z" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <circle cx="88" cy="76" r="6" fill="var(--secondary)"/>
-          <circle cx="150" cy="76" r="6" fill="var(--on-surface)"/>
-          <circle cx="212" cy="76" r="6" fill="var(--secondary)"/>
-          <line x1="44" y1="112" x2="256" y2="112" stroke="var(--outline-variant)" stroke-dasharray="4 3" stroke-width="1.2"/>
-          <rect x="130" y="112" width="40" height="30" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <line x1="30" y1="142" x2="270" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
-      }
-      if (id === 'estatua-viana') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <rect x="86" y="128" width="128" height="14" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <rect x="104" y="88" width="92" height="40" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <circle cx="104" cy="88" r="8" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <circle cx="196" cy="88" r="8" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <circle cx="128" cy="96" r="6" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1"/>
-          <circle cx="172" cy="96" r="6" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1"/>
-          <path d="M138 88 L144 46 Q150 38 156 46 L162 88 Z" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <circle cx="150" cy="34" r="7" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M156 54 L182 44 L174 34 L164 44" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <line x1="173" y1="42" x2="173" y2="24" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <line x1="60" y1="142" x2="240" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
-      }
-      if (id === 'igreja-matriz') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <rect x="58" y="34" width="44" height="108" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <rect x="198" y="34" width="44" height="108" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <path d="M102 142 V54 L150 24 L198 54 V142 Z" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <circle cx="150" cy="68" r="19" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <circle cx="150" cy="68" r="9" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1"/>
-          <path d="M126 142 V112 Q150 94 174 112 V142 Z" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <path d="M72 64 V50 Q80 42 88 50 V64 Z" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <path d="M212 64 V50 Q220 42 228 50 V64 Z" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <line x1="40" y1="142" x2="260" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
-      }
-      if (id === 'palacio-viscondes') {
-        return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-          <rect x="34" y="36" width="232" height="106" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.5"/>
-          <line x1="26" y1="36" x2="274" y2="36" stroke="var(--on-surface)" stroke-width="2.2"/>
-          <line x1="34" y1="88" x2="266" y2="88" stroke="var(--outline-variant)" stroke-width="1.2"/>
-          <rect x="56" y="48" width="28" height="30" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M53 48 Q70 38 87 48" fill="none" stroke="var(--tertiary)" stroke-width="1.6"/>
-          <rect x="136" y="48" width="28" height="30" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M133 48 Q150 38 167 48" fill="none" stroke="var(--tertiary)" stroke-width="1.6"/>
-          <rect x="216" y="48" width="28" height="30" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.3"/>
-          <path d="M213 48 Q230 38 247 48" fill="none" stroke="var(--tertiary)" stroke-width="1.6"/>
-          <rect x="132" y="102" width="36" height="40" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.4"/>
-          <rect x="60" y="104" width="20" height="24" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <rect x="220" y="104" width="20" height="24" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.2"/>
-          <line x1="22" y1="142" x2="278" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
-        </svg>`;
-      }
-      return `<svg class="plate-svg" viewBox="0 0 300 160" aria-hidden="true">
-        <polygon points="48,54 150,20 252,54" fill="var(--surface-container)" stroke="var(--on-surface)" stroke-width="1.5"/>
-        <rect x="56" y="54" width="188" height="88" fill="var(--surface-container-low)" stroke="var(--on-surface)" stroke-width="1.5"/>
-        <path d="M84 142 V102 A14 14 0 0 1 112 102 V142" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.3"/>
-        <path d="M136 142 V98 A14 14 0 0 1 164 98 V142" fill="var(--primary-container)" stroke="var(--on-surface)" stroke-width="1.3"/>
-        <path d="M188 142 V102 A14 14 0 0 1 216 102 V142" fill="var(--secondary-soft)" stroke="var(--on-surface)" stroke-width="1.3"/>
-        <path d="M90 68 Q120 82 150 68 Q180 82 210 68" fill="none" stroke="var(--data-4)" stroke-width="1.8"/>
-        <line x1="36" y1="142" x2="264" y2="142" stroke="var(--on-surface)" stroke-width="1.5"/>
+
+      // Ordem geográfica sugerida de caminhada no mapa
+      const routeIds = [`palacio-carreira`, `teatro-sa-miranda`, `antigos-pacos`, `capela-malheiras`, `estatua-viana`, `casa-nichos`];
+      const routePoints = routeIds.map(function (id) {
+        const mon = mapped.find(function (m) { return m.id === id; });
+        return mon ? projectPoint(mon.gps) : null;
+      }).filter(Boolean);
+
+      const pathData = routePoints.map(function (pt, idx) {
+        return (idx === 0 ? `M ` : `L `) + pt.x + ` ` + pt.y;
+      }).join(` `);
+
+      const labelOffsets = {
+        'teatro-sa-miranda': { dx: 14, dy: -2, anchor: `start` },
+        'palacio-carreira': { dx: -14, dy: 4, anchor: `end` },
+        'antigos-pacos': { dx: -14, dy: 4, anchor: `end` },
+        'capela-malheiras': { dx: 14, dy: 4, anchor: `start` },
+        'estatua-viana': { dx: 14, dy: 4, anchor: `start` },
+        'casa-nichos': { dx: -14, dy: 4, anchor: `end` }
+      };
+
+      const scale100mPx = Math.round(100 * scale);
+
+      const pinsSvg = mapped.map(function (m) {
+        const pt = projectPoint(m.gps);
+        const isVisited = appState.visitedIds.indexOf(m.id) !== -1;
+        const fill = isVisited ? `var(--tertiary)` : `var(--primary)`;
+        const off = labelOffsets[m.id] || { dx: 14, dy: 4, anchor: `start` };
+        return `<g class="map-pin-btn" tabindex="0" role="button" aria-label="Ir para ${m.name}" data-jump-id="${m.id}">
+          <circle class="pin-ring" cx="${pt.x}" cy="${pt.y}" r="14" fill="${fill}" fill-opacity="0.16" stroke="${fill}" stroke-width="1.5"></circle>
+          <circle cx="${pt.x}" cy="${pt.y}" r="10" fill="${fill}"></circle>
+          <text x="${pt.x}" y="${pt.y + 3.5}" text-anchor="middle" fill="var(--on-primary)" font-family="var(--font-mono)" font-size="9.5" font-weight="600">${m.order}</text>
+          <text x="${pt.x + off.dx}" y="${pt.y + off.dy}" text-anchor="${off.anchor}" fill="var(--on-surface)" font-family="var(--font-body)" font-size="11.5" font-weight="600">${m.shortName}</text>
+        </g>`;
+      }).join(``);
+
+      // Marcador complementar da Praça da República (08 Museu do Traje) junto aos Antigos Paços
+      const pacosMon = mapped.find(function (m) { return m.id === `antigos-pacos`; });
+      const pacosPt = pacosMon ? projectPoint(pacosMon.gps) : { x: 240, y: 170 };
+      const museuVisited = appState.visitedIds.indexOf(`museu-traje`) !== -1;
+      const museuFill = museuVisited ? `var(--tertiary)` : `var(--secondary)`;
+
+      const svgMarkup = `<svg class="map-svg" viewBox="0 0 ${svgW} ${svgH}" role="img" aria-label="Mapa vetorial proporcional dos monumentos no centro histórico de Viana do Castelo">
+        <rect x="4" y="4" width="${svgW - 8}" height="${svgH - 8}" rx="8" fill="var(--background)" stroke="var(--outline-variant)" stroke-width="1"></rect>
+        <g stroke="var(--outline-variant)" stroke-width="0.6" stroke-dasharray="3 4" opacity="0.7">
+          <line x1="20" y1="85" x2="${svgW - 20}" y2="85"></line>
+          <line x1="20" y1="170" x2="${svgW - 20}" y2="170"></line>
+          <line x1="20" y1="255" x2="${svgW - 20}" y2="255"></line>
+          <line x1="135" y1="20" x2="135" y2="${svgH - 20}"></line>
+          <line x1="270" y1="20" x2="270" y2="${svgH - 20}"></line>
+          <line x1="405" y1="20" x2="405" y2="${svgH - 20}"></line>
+        </g>
+
+        <path d="${pathData}" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-dasharray="5 5" opacity="0.8"></path>
+
+        ${pinsSvg}
+
+        <g class="map-pin-btn" tabindex="0" role="button" aria-label="Ir para Museu do Traje de Viana do Castelo (Praça da República)" data-jump-id="museu-traje">
+          <circle class="pin-ring" cx="${pacosPt.x + 22}" cy="${pacosPt.y + 18}" r="11" fill="${museuFill}" fill-opacity="0.18" stroke="${museuFill}" stroke-dasharray="2 2" stroke-width="1.2"></circle>
+          <circle cx="${pacosPt.x + 22}" cy="${pacosPt.y + 18}" r="8.5" fill="${museuFill}"></circle>
+          <text x="${pacosPt.x + 22}" y="${pacosPt.y + 21}" text-anchor="middle" fill="var(--on-primary)" font-family="var(--font-mono)" font-size="8.5" font-weight="600">08</text>
+          <text x="${pacosPt.x + 35}" y="${pacosPt.y + 22}" text-anchor="start" fill="var(--secondary)" font-family="var(--font-body)" font-size="10.5" font-weight="600">Museu do Traje (Praça da Rep.)</text>
+        </g>
+
+        <!-- Rosa dos Ventos Norte -->
+        <g transform="translate(${svgW - 42}, 34)">
+          <circle cx="0" cy="0" r="14" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="1"></circle>
+          <polygon points="0,-10 3.5,2 0,0 -3.5,2" fill="var(--primary)"></polygon>
+          <text x="0" y="10" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="8" font-weight="600">N</text>
+        </g>
+
+        <!-- Barra de Escala 100 m -->
+        <g transform="translate(22, ${svgH - 24})">
+          <line x1="0" y1="0" x2="${scale100mPx}" y2="0" stroke="var(--on-surface)" stroke-width="2"></line>
+          <line x1="0" y1="-4" x2="0" y2="4" stroke="var(--on-surface)" stroke-width="1.5"></line>
+          <line x1="${scale100mPx}" y1="-4" x2="${scale100mPx}" y2="4" stroke="var(--on-surface)" stroke-width="1.5"></line>
+          <text x="${scale100mPx + 8}" y="3.5" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="10">100 m aprox.</text>
+        </g>
+
+        <!-- Referência Sé Catedral sem GPS na fonte -->
+        <g class="map-pin-btn" tabindex="0" role="button" aria-label="Ir para Igreja Matriz (Sé Catedral)" data-jump-id="igreja-matriz" transform="translate(${svgW - 196}, ${svgH - 36})">
+          <rect x="0" y="0" width="176" height="24" rx="4" fill="var(--surface-container-low)" stroke="var(--outline-variant)" stroke-width="1"></rect>
+          <text x="8" y="15.5" fill="var(--on-surface)" font-family="var(--font-body)" font-size="10.5" font-weight="600">05 · Sé Catedral (sem GPS na fonte)</text>
+        </g>
       </svg>`;
+
+      container.innerHTML = svgMarkup;
+
+      const pins = container.querySelectorAll(`[data-jump-id]`);
+      pins.forEach(function (pin) {
+        pin.addEventListener(`click`, function () {
+          jumpToMonument(pin.getAttribute(`data-jump-id`));
+        });
+        pin.addEventListener(`keydown`, function (e) {
+          if (e.key === `Enter` || e.key === ` `) {
+            e.preventDefault();
+            jumpToMonument(pin.getAttribute(`data-jump-id`));
+          }
+        });
+      });
+    }
+
+    function renderTimeline() {
+      const list = document.getElementById(`timeline-list`);
+      if (!list) return;
+
+      const sorted = MONUMENTS.slice().sort(function (a, b) {
+        return a.chronologyYear - b.chronologyYear;
+      });
+
+      list.innerHTML = sorted.map(function (m) {
+        const isVisited = appState.visitedIds.indexOf(m.id) !== -1;
+        return `<li>
+          <button type="button" class="timeline-jump-btn ${isVisited ? `is-visited` : ``}" data-timeline-id="${m.id}">
+            <span class="timeline-era">${m.chronologyLabel}</span>
+            <span class="timeline-name">${m.name}</span>
+            <span class="timeline-stop-num">${m.order}</span>
+          </button>
+        </li>`;
+      }).join(``);
+
+      const btns = list.querySelectorAll(`[data-timeline-id]`);
+      btns.forEach(function (btn) {
+        btn.addEventListener(`click`, function () {
+          jumpToMonument(btn.getAttribute(`data-timeline-id`));
+        });
+      });
+    }
+
+    function jumpToMonument(monumentId) {
+      if (!monumentId) return;
+      const unit = document.getElementById(`unit-${monumentId}`);
+      if (!unit) return;
+      if (unit.classList.contains(`is-hidden`)) {
+        appState.activeFilter = `all`;
+        appState.searchQuery = ``;
+        const searchEl = document.getElementById(`search-input`);
+        if (searchEl) searchEl.value = ``;
+        syncFilterButtons();
+        applyFilters();
+      }
+      unit.scrollIntoView({ behavior: `smooth`, block: `start` });
+    }
+
+    function buildMonumentUnitHtml(m) {
+      const isVisited = appState.visitedIds.indexOf(m.id) !== -1;
+      const noteValue = appState.notesById[m.id] || ``;
+      const hasNotes = noteValue.trim().length > 0;
+      const sessionPhotoUrl = appState.sessionPhotoUrlsById[m.id] || ``;
+      const savedPhotoName = appState.photoNamesById[m.id] || ``;
+
+      const badgeClass = m.isClassified ? `badge-emerald` : `badge-brass`;
+      const highlightsHtml = m.highlights.map(function (h) {
+        return `<li>${h}</li>`;
+      }).join(``);
+
+      let photoInnerHtml = ``;
+      if (sessionPhotoUrl) {
+        photoInnerHtml = `<img src="${sessionPhotoUrl}" alt="Fotografia inserida para ${m.name}">`;
+      } else {
+        const prevNoteHtml = savedPhotoName
+          ? `<div class="photo-prev-session-note">Última fotografia associada: ${escapeHtml(savedPhotoName)} — voltar a carregar se desejar pré-visualizar</div>`
+          : ``;
+        photoInnerHtml = `
+          <svg class="photo-empty-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <p class="photo-empty-title">Espaço reservado para fotografia</p>
+          <p class="photo-empty-hint">Insere uma fotografia oficial do site municipal (cm-viana-castelo.pt) ou captada no local.</p>
+          ${prevNoteHtml}
+        `;
+      }
+
+      return `
+        <section class="monument-unit" id="unit-${m.id}" data-monument-id="${m.id}" aria-labelledby="title-${m.id}">
+          <div class="card-wrapper">
+            <article class="monument-card ${isVisited ? `is-visited` : ``}" id="card-${m.id}">
+              <!-- Espaço horizontal esquerdo: Fotografia do monumento -->
+              <div class="photo-slot">
+                <div class="photo-frame ${sessionPhotoUrl ? `has-image` : ``}" id="photo-frame-${m.id}">
+                  ${photoInnerHtml}
+                </div>
+                <div class="photo-controls">
+                  <div>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      id="photo-input-${m.id}"
+                      class="file-input-hidden"
+                      data-photo-input="${m.id}"
+                    >
+                    <label for="photo-input-${m.id}" class="upload-btn">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                      </svg>
+                      ${sessionPhotoUrl ? `Substituir foto` : `Carregar fotografia`}
+                    </label>
+                  </div>
+                  ${sessionPhotoUrl ? `<button type="button" class="remove-photo-btn" data-remove-photo="${m.id}">Remover</button>` : ``}
+                </div>
+                ${savedPhotoName ? `<div class="photo-file-caption" title="${escapeHtml(savedPhotoName)}">Ficheiro: ${escapeHtml(savedPhotoName)}</div>` : ``}
+              </div>
+
+              <!-- Corpo horizontal direito: Época, Síntese e Destaques -->
+              <div class="monument-body">
+                <div class="monument-header-bar">
+                  <div class="monument-badges">
+                    <span class="stop-index-badge">PARAGEM ${m.order}</span>
+                    <span class="${badgeClass}">${m.classification}</span>
+                  </div>
+                  <button
+                    type="button"
+                    class="visit-toggle-btn"
+                    data-visit-toggle="${m.id}"
+                    aria-pressed="${isVisited ? `true` : `false`}"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    ${isVisited ? `Visitado` : `Marcar paragem`}
+                  </button>
+                </div>
+
+                <div>
+                  <h2 class="monument-title" id="title-${m.id}">${m.name}</h2>
+                  <p class="monument-epoch">${m.epoch}</p>
+                </div>
+
+                <div class="monument-columns">
+                  <div>
+                    <h3 class="block-kicker">Síntese histórica</h3>
+                    <p class="monument-synthesis">${m.synthesis}</p>
+                  </div>
+                  <div>
+                    <h3 class="block-kicker">Destaques arquitetónicos e artísticos</h3>
+                    <ul class="highlights-list">
+                      ${highlightsHtml}
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="monument-meta-strip">
+                  <span class="meta-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    ${m.address}
+                  </span>
+                  <span class="meta-item meta-mono">${m.gpsText}</span>
+                  <span class="meta-item">${m.hoursText}</span>
+                  <span class="meta-item">Fonte oficial: ${m.officialSource}</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Caixa de anotações imediatamente abaixo de cada monumento intitulada unicamente "Notas de campo" -->
+          <div class="field-notes-box">
+            <div class="field-notes-header">
+              <label class="field-notes-label" for="notes-${m.id}">Notas de campo</label>
+              <span class="field-notes-status ${hasNotes ? `has-notes` : ``}" id="notes-status-${m.id}">
+                ${hasNotes ? `Anotação registada (${noteValue.trim().length} caracteres)` : `Sem anotações`}
+              </span>
+            </div>
+            <textarea
+              id="notes-${m.id}"
+              class="field-notes-textarea"
+              data-notes-id="${m.id}"
+              placeholder="Regista aqui as tuas observações de terreno, pormenores arquitetónicos e respostas às pistas do peddy paper…"
+            >${escapeHtml(noteValue)}</textarea>
+          </div>
+        </section>
+      `;
     }
 
     function escapeHtml(str) {
       return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
+        .replace(/&/g, `&amp;`)
+        .replace(/</g, `&lt;`)
+        .replace(/>/g, `&gt;`)
+        .replace(/"/g, `&quot;`);
     }
 
-    function showToast(msg) {
-      const toast = document.getElementById('status-toast');
-      if (!toast) return;
-      toast.textContent = msg;
-      window.clearTimeout(showToast._timer);
-      showToast._timer = window.setTimeout(function () {
-        const t = document.getElementById('status-toast');
-        if (t) t.textContent = '';
-      }, 3000);
+    function renderMonuments() {
+      const container = document.getElementById(`monuments-list`);
+      if (!container) return;
+
+      container.innerHTML = MONUMENTS.map(buildMonumentUnitHtml).join(``);
+      bindMonumentListeners();
+      applyFilters();
+      updateProgressSummary();
     }
 
-    function persistState() {
-      try {
-        window.localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
-      } catch (err) {
-        /* Ignore private-browsing quota errors */
-      }
-    }
-
-    function loadPersistedState() {
-      try {
-        const raw = window.localStorage.getItem(STORAGE_KEY);
-        if (!raw) return;
-        const saved = JSON.parse(raw);
-        if (saved && typeof saved === 'object') {
-          if (typeof saved.search === 'string') appState.search = saved.search;
-          if (typeof saved.epoch === 'string') appState.epoch = saved.epoch;
-          if (typeof saved.status === 'string') appState.status = saved.status;
-          if (Array.isArray(saved.visited)) appState.visited = saved.visited;
-          if (Array.isArray(saved.route)) appState.route = saved.route;
-          if (saved.notes && typeof saved.notes === 'object') appState.notes = saved.notes;
-        }
-      } catch (err) {
-        /* Start with clean default state */
-      }
-    }
-
-    function countAllPhotos() {
-      let total = 0;
-      MONUMENTS.forEach(function (m) {
-        const list = sessionPhotos[m.id];
-        if (Array.isArray(list)) total += list.length;
-      });
-      return total;
-    }
-
-    function updateKpis() {
-      const progressEl = document.getElementById('kpi-progress');
-      const routeNoteEl = document.getElementById('kpi-route-note');
-      const visitedCount = appState.visited.length;
-      const photoCount = countAllPhotos();
-      const routeCount = appState.route.length;
-
-      if (progressEl) {
-        progressEl.textContent = `${visitedCount}/7 · ${photoCount} ${photoCount === 1 ? 'foto' : 'fotos'}`;
-      }
-      if (routeNoteEl) {
-        routeNoteEl.textContent = `${routeCount} ${routeCount === 1 ? 'marcado' : 'marcados'} no roteiro`;
-      }
-    }
-
-    function renderOverview() {
-      const timelineEl = document.getElementById('timeline-list');
-      if (timelineEl) {
-        const sorted = MONUMENTS.slice().sort(function (a, b) {
-          const order = {
-            'igreja-matriz': 1400,
-            'casa-nichos': 1450,
-            'pacos-concelho': 1530,
-            'palacio-viscondes': 1550,
-            'capela-malheiras': 1740,
-            'estatua-viana': 1774,
-            'teatro-sa-miranda': 1885
-          };
-          return order[a.id] - order[b.id];
+    function bindMonumentListeners() {
+      const visitBtns = document.querySelectorAll(`[data-visit-toggle]`);
+      visitBtns.forEach(function (btn) {
+        btn.addEventListener(`click`, function () {
+          toggleVisited(btn.getAttribute(`data-visit-toggle`));
         });
-        timelineEl.innerHTML = sorted.map(function (m) {
-          return `<button type="button" class="timeline-row" onclick="jumpToMonument('${m.id}')">
-            <span class="timeline-year">${escapeHtml(m.timelineYear)}</span>
-            <span class="timeline-name">${escapeHtml(m.name)}</span>
-            <span class="timeline-style">${escapeHtml(m.styleTag)}</span>
-          </button>`;
-        }).join('');
-      }
-
-      const geoSvg = document.getElementById('geo-svg');
-      if (geoSvg) {
-        const geoItems = MONUMENTS.filter(function (m) {
-          return typeof m.lat === 'number' && typeof m.lon === 'number';
-        });
-        const lats = geoItems.map(function (m) { return m.lat; });
-        const lons = geoItems.map(function (m) { return m.lon; });
-        const minLat = Math.min.apply(null, lats);
-        const maxLat = Math.max.apply(null, lats);
-        const minLon = Math.min.apply(null, lons);
-        const maxLon = Math.max.apply(null, lons);
-
-        const padX = 48;
-        const padY = 26;
-        const width = 420 - padX * 2;
-        const height = 210 - padY * 2;
-
-        let svgContent = `
-          <line x1="20" y1="105" x2="400" y2="105" stroke="var(--outline-variant)" stroke-dasharray="3 3" stroke-width="1"/>
-          <line x1="210" y1="16" x2="210" y2="194" stroke="var(--outline-variant)" stroke-dasharray="3 3" stroke-width="1"/>
-          <text x="210" y="14" text-anchor="middle" font-family="var(--font-label)" font-size="9" fill="var(--on-surface-variant)">NORTE</text>
-          <text x="210" y="204" text-anchor="middle" font-family="var(--font-label)" font-size="9" fill="var(--on-surface-variant)">SUL</text>
-          <text x="12" y="108" text-anchor="start" font-family="var(--font-label)" font-size="9" fill="var(--on-surface-variant)">O</text>
-          <text x="408" y="108" text-anchor="end" font-family="var(--font-label)" font-size="9" fill="var(--on-surface-variant)">E</text>
-        `;
-
-        geoItems.forEach(function (m) {
-          const x = padX + ((m.lon - minLon) / (maxLon - minLon || 1)) * width;
-          const y = padY + (1 - (m.lat - minLat) / (maxLat - minLat || 1)) * height;
-          const shortName = m.name.split(' – ')[0].replace('Palácio dos ', 'Pal. ');
-          const anchor = x > 280 ? 'end' : 'start';
-          const dx = x > 280 ? -11 : 11;
-          svgContent += `
-            <g class="geo-point" onclick="jumpToMonument('${m.id}')" tabindex="0" role="button" aria-label="Ir para ${escapeHtml(m.name)}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpToMonument('${m.id}');}">
-              <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" fill="var(--secondary)" stroke="var(--surface-container-low)" stroke-width="2"/>
-              <text x="${(x + dx).toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="${anchor}" font-family="var(--font-body)" font-size="10.5" font-weight="600" fill="var(--on-surface)">${escapeHtml(m.index)} ${escapeHtml(shortName)}</text>
-            </g>
-          `;
-        });
-        geoSvg.innerHTML = svgContent;
-      }
-
-      const quickIndex = document.getElementById('quick-index');
-      if (quickIndex) {
-        quickIndex.innerHTML = MONUMENTS.map(function (m) {
-          const shortLabel = m.name.split(' – ')[0].replace(' de Viana do Castelo', '');
-          return `<button type="button" class="index-chip" onclick="jumpToMonument('${m.id}')">
-            <span class="idx-num">${escapeHtml(m.index)}</span>
-            <span>${escapeHtml(shortLabel)}</span>
-          </button>`;
-        }).join('');
-      }
-    }
-
-    function getFilteredMonuments() {
-      const q = appState.search.trim().toLowerCase();
-      return MONUMENTS.filter(function (m) {
-        if (appState.epoch !== 'all' && m.epochKey !== appState.epoch) return false;
-        if (appState.status === 'classified' && !m.isClassified) return false;
-        if (appState.status === 'route' && appState.route.indexOf(m.id) === -1) return false;
-        if (appState.status === 'visited' && appState.visited.indexOf(m.id) === -1) return false;
-        if (appState.status === 'has-photos' && (!sessionPhotos[m.id] || sessionPhotos[m.id].length === 0)) return false;
-
-        if (q) {
-          const hay = [
-            m.name, m.history, m.architecture, m.styleTag, m.classification, m.epochLabel
-          ].join(' ').toLowerCase();
-          if (hay.indexOf(q) === -1) return false;
-        }
-        return true;
-      });
-    }
-
-    function renderMediaPaneHtml(m) {
-      const photos = sessionPhotos[m.id] || [];
-      const hasPhotos = photos.length > 0;
-      const showPlate = !hasPhotos || Boolean(forcePlateMode[m.id]);
-      const idx = Math.min(activePhotoIndex[m.id] || 0, Math.max(0, photos.length - 1));
-      const activePhoto = hasPhotos ? photos[idx] : null;
-
-      let stageHtml = '';
-      if (showPlate) {
-        stageHtml = `
-          <div class="plate-wrap">
-            <div class="plate-header">
-              <span class="plate-badge">${escapeHtml(m.plateCode)}</span>
-              <span class="plate-badge">${hasPhotos ? 'Esquema' : 'Sem fotos'}</span>
-            </div>
-            ${renderPlateSvg(m.id)}
-            <p class="plate-hint">Toca no botão abaixo para tirar uma foto ou escolher da galeria.</p>
-          </div>
-        `;
-      } else {
-        stageHtml = `
-          <img src="${activePhoto.url}" alt="${escapeHtml(activePhoto.caption || m.name)}" onclick="openLightbox('${m.id}', ${idx})">
-          <span class="photo-overlay-badge">Foto ${idx + 1} de ${photos.length}</span>
-          <button type="button" class="photo-expand-btn" onclick="openLightbox('${m.id}', ${idx})">
-            <i data-lucide="maximize-2" aria-hidden="true"></i>
-            Ampliar
-          </button>
-        `;
-      }
-
-      let thumbsHtml = '';
-      if (hasPhotos) {
-        thumbsHtml = `<div class="thumb-strip" aria-label="Miniaturas de fotografias">
-          ${photos.map(function (p, pIdx) {
-            const isActive = !showPlate && pIdx === idx;
-            return `<button type="button" class="thumb-btn ${isActive ? 'active' : ''}" onclick="selectMonumentPhoto('${m.id}', ${pIdx})" aria-label="Ver fotografia ${pIdx + 1}">
-              <img src="${p.url}" alt="">
-            </button>`;
-          }).join('')}
-        </div>`;
-      }
-
-      let captionHtml = '';
-      if (hasPhotos && !showPlate && activePhoto) {
-        captionHtml = `<div class="photo-caption-row">
-          <div class="field-group">
-            <label class="field-label" for="cap-${m.id}">Legenda da fotografia</label>
-            <input type="text" class="caption-input" id="cap-${m.id}" value="${escapeHtml(activePhoto.caption || '')}" placeholder="Ex.: Fachada principal, pormenor da porta…" oninput="updatePhotoCaption('${m.id}', ${idx}, this.value)">
-          </div>
-          <button type="button" class="btn btn-danger-outline btn-sm" onclick="removeMonumentPhoto('${m.id}', ${idx})" aria-label="Remover esta fotografia">
-            Remover
-          </button>
-        </div>`;
-      }
-
-      const togglePlateBtn = hasPhotos
-        ? `<button type="button" class="btn btn-secondary btn-sm" onclick="togglePlateView('${m.id}')">${showPlate ? `Ver fotos (${photos.length})` : 'Ver esquema'}</button>`
-        : '';
-
-      return `
-        <div class="media-pane">
-          <div class="media-stage"
-               id="drop-${m.id}"
-               ondragover="handleDragOver(event, '${m.id}')"
-               ondragleave="handleDragLeave(event, '${m.id}')"
-               ondrop="handleDrop(event, '${m.id}')">
-            ${stageHtml}
-          </div>
-          ${thumbsHtml}
-          ${captionHtml}
-          <div class="media-controls">
-            <label class="btn btn-primary btn-sm upload-label">
-              <i data-lucide="camera" aria-hidden="true"></i>
-              <span>${hasPhotos ? 'Adicionar foto' : 'Tirar / Carregar foto'}</span>
-              <input type="file" accept="image/*" multiple class="visually-hidden-input" onchange="handleFileInput(event, '${m.id}')">
-            </label>
-            ${togglePlateBtn}
-          </div>
-        </div>
-      `;
-    }
-
-    function renderCards() {
-      const stack = document.getElementById('cards-stack');
-      const countEl = document.getElementById('results-count');
-      if (!stack) return;
-
-      const list = getFilteredMonuments();
-      if (countEl) {
-        countEl.textContent = `A mostrar ${list.length} de ${MONUMENTS.length} monumentos`;
-      }
-
-      if (list.length === 0) {
-        stack.innerHTML = `<div class="empty-state">
-          <h3 class="panel-title">Nenhum monumento corresponde aos filtros selecionados</h3>
-          <p class="aside-text">Limpa a pesquisa ou repõe os filtros para voltares a ver os 7 cartões.</p>
-          <button type="button" class="btn btn-primary" onclick="clearFilters()">Mostrar todos os monumentos</button>
-        </div>`;
-        updateKpis();
-        return;
-      }
-
-      stack.innerHTML = list.map(function (m) {
-        const isRoute = appState.route.indexOf(m.id) !== -1;
-        const isVisited = appState.visited.indexOf(m.id) !== -1;
-        const noteVal = appState.notes[m.id] || '';
-        const badgeClass = m.isClassified ? 'tag-chip mn' : 'tag-chip';
-
-        return `
-          <article class="monument-card-shell" id="card-${m.id}">
-            <div class="monument-card">
-              ${renderMediaPaneHtml(m)}
-              <div class="content-pane">
-                <div class="card-top">
-                  <div class="card-title-group">
-                    <div class="card-kicker-row">
-                      <span class="index-num">${escapeHtml(m.index)}</span>
-                      <span class="${badgeClass}">${escapeHtml(m.classificationShort)}</span>
-                      <span class="tag-chip">${escapeHtml(m.epochLabel)}</span>
-                    </div>
-                    <h2 class="card-title">${escapeHtml(m.name)}</h2>
-                  </div>
-                  <div class="card-actions">
-                    <button type="button" class="toggle-pill ${isRoute ? 'active-route' : ''}" onclick="toggleRoute('${m.id}')" aria-pressed="${isRoute}">
-                      <i data-lucide="map-pin" aria-hidden="true"></i>
-                      <span>${isRoute ? 'No roteiro' : 'Roteiro'}</span>
-                    </button>
-                    <button type="button" class="toggle-pill ${isVisited ? 'active-visited' : ''}" onclick="toggleVisited('${m.id}')" aria-pressed="${isVisited}">
-                      <i data-lucide="check-circle-2" aria-hidden="true"></i>
-                      <span>${isVisited ? 'Visitado' : 'Marcar visita'}</span>
-                    </button>
-                  </div>
-                </div>
-
-                <div class="pillars-grid">
-                  <section class="pillar-box" aria-label="Dados históricos">
-                    <h3 class="pillar-heading">
-                      <i data-lucide="landmark" aria-hidden="true"></i>
-                      <span>Dados Históricos</span>
-                    </h3>
-                    <p class="pillar-text">${escapeHtml(m.history)}</p>
-                  </section>
-
-                  <section class="pillar-box arch" aria-label="Arquitetura e Arte">
-                    <h3 class="pillar-heading">
-                      <i data-lucide="compass" aria-hidden="true"></i>
-                      <span>Arquitetura &amp; Arte</span>
-                    </h3>
-                    <p class="pillar-text">${escapeHtml(m.architecture)}</p>
-                  </section>
-                </div>
-
-                <div class="card-footer-note">
-                  <div class="field-group">
-                    <label class="field-label" for="note-${m.id}">Notas de campo / respostas do Peddy Paper</label>
-                    <input type="text" class="text-input" id="note-${m.id}" value="${escapeHtml(noteVal)}" placeholder="Escreve aqui observações, pistas ou detalhes da fachada…" oninput="updateNote('${m.id}', this.value)">
-                  </div>
-                  <span class="note-badge">${escapeHtml(m.classification)}</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        `;
-      }).join('');
-
-      updateKpis();
-      if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
-      }
-    }
-
-    function jumpToMonument(id) {
-      let target = document.getElementById(`card-${id}`);
-      if (!target) {
-        clearFilters();
-        target = document.getElementById(`card-${id}`);
-      }
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    function handleSearchChange(val) {
-      appState.search = val;
-      renderCards();
-      persistState();
-    }
-
-    function handleEpochChange(val) {
-      appState.epoch = val;
-      renderCards();
-      persistState();
-    }
-
-    function handleStatusChange(val) {
-      appState.status = val;
-      renderCards();
-      persistState();
-    }
-
-    function clearFilters() {
-      appState.search = '';
-      appState.epoch = 'all';
-      appState.status = 'all';
-      const sEl = document.getElementById('search-input');
-      const eEl = document.getElementById('epoch-select');
-      const stEl = document.getElementById('status-select');
-      if (sEl) sEl.value = '';
-      if (eEl) eEl.value = 'all';
-      if (stEl) stEl.value = 'all';
-      renderCards();
-      persistState();
-    }
-
-    function toggleRoute(id) {
-      const idx = appState.route.indexOf(id);
-      if (idx === -1) {
-        appState.route.push(id);
-        showToast('Adicionado ao roteiro.');
-      } else {
-        appState.route.splice(idx, 1);
-        showToast('Removido do roteiro.');
-      }
-      renderCards();
-      persistState();
-    }
-
-    function toggleVisited(id) {
-      const idx = appState.visited.indexOf(id);
-      if (idx === -1) {
-        appState.visited.push(id);
-        showToast('Visita registada!');
-      } else {
-        appState.visited.splice(idx, 1);
-        showToast('Marcação de visita removida.');
-      }
-      renderCards();
-      persistState();
-    }
-
-    function updateNote(id, value) {
-      appState.notes[id] = value;
-      persistState();
-    }
-
-    function addPhotosToMonument(monumentId, fileList) {
-      if (!fileList || fileList.length === 0) return;
-      if (!sessionPhotos[monumentId]) sessionPhotos[monumentId] = [];
-      let added = 0;
-
-      Array.from(fileList).forEach(function (file) {
-        if (!file.type || file.type.indexOf('image/') !== 0) return;
-        const objectUrl = URL.createObjectURL(file);
-        const cleanName = file.name ? file.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ') : '';
-        sessionPhotos[monumentId].push({
-          url: objectUrl,
-          caption: cleanName
-        });
-        added += 1;
       });
 
-      if (added > 0) {
-        forcePlateMode[monumentId] = false;
-        activePhotoIndex[monumentId] = sessionPhotos[monumentId].length - 1;
-        renderCards();
-        showToast(`${added} ${added === 1 ? 'fotografia carregada' : 'fotografias carregadas'}.`);
-      } else {
-        showToast('Seleciona apenas ficheiros de imagem válidos.');
-      }
-    }
+      const noteAreas = document.querySelectorAll(`[data-notes-id]`);
+      noteAreas.forEach(function (ta) {
+        ta.addEventListener(`input`, function () {
+          handleNoteInput(ta.getAttribute(`data-notes-id`), ta.value);
+        });
+      });
 
-    function handleFileInput(event, monumentId) {
-      const files = event.target && event.target.files;
-      addPhotosToMonument(monumentId, files);
-    }
-
-    function handleDragOver(event, monumentId) {
-      event.preventDefault();
-      const stage = document.getElementById(`drop-${monumentId}`);
-      if (stage) stage.classList.add('drag-over');
-    }
-
-    function handleDragLeave(event, monumentId) {
-      const stage = document.getElementById(`drop-${monumentId}`);
-      if (stage) stage.classList.remove('drag-over');
-    }
-
-    function handleDrop(event, monumentId) {
-      event.preventDefault();
-      const stage = document.getElementById(`drop-${monumentId}`);
-      if (stage) stage.classList.remove('drag-over');
-      const files = event.dataTransfer && event.dataTransfer.files;
-      addPhotosToMonument(monumentId, files);
-    }
-
-    function selectMonumentPhoto(monumentId, idx) {
-      forcePlateMode[monumentId] = false;
-      activePhotoIndex[monumentId] = idx;
-      renderCards();
-    }
-
-    function togglePlateView(monumentId) {
-      forcePlateMode[monumentId] = !forcePlateMode[monumentId];
-      renderCards();
-    }
-
-    function updatePhotoCaption(monumentId, idx, value) {
-      const list = sessionPhotos[monumentId];
-      if (!list || !list[idx]) return;
-      list[idx].caption = value;
-    }
-
-    function removeMonumentPhoto(monumentId, idx) {
-      const list = sessionPhotos[monumentId];
-      if (!list || !list[idx]) return;
-      const removed = list.splice(idx, 1)[0];
-      if (removed && removed.url) {
-        URL.revokeObjectURL(removed.url);
-      }
-      activePhotoIndex[monumentId] = Math.max(0, Math.min(idx, list.length - 1));
-      renderCards();
-      showToast('Fotografia removida.');
-    }
-
-    function openLightbox(monumentId, idx) {
-      const list = sessionPhotos[monumentId];
-      if (!list || !list[idx]) return;
-      lightboxState = { monumentId: monumentId, index: idx };
-      updateLightboxView();
-      const modal = document.getElementById('lightbox');
-      if (modal) modal.classList.add('open');
-    }
-
-    function updateLightboxView() {
-      const monument = MONUMENTS.find(function (m) { return m.id === lightboxState.monumentId; });
-      const list = sessionPhotos[lightboxState.monumentId] || [];
-      const photo = list[lightboxState.index];
-      const titleEl = document.getElementById('lightbox-title');
-      const bodyEl = document.getElementById('lightbox-body');
-      const capEl = document.getElementById('lightbox-caption');
-      const prevBtn = document.getElementById('lb-prev');
-      const nextBtn = document.getElementById('lb-next');
-
-      if (!monument || !photo) return;
-      if (titleEl) titleEl.textContent = `${monument.name} (${lightboxState.index + 1}/${list.length})`;
-      if (bodyEl) bodyEl.innerHTML = `<img src="${photo.url}" alt="${escapeHtml(photo.caption || monument.name)}">`;
-      if (capEl) capEl.textContent = photo.caption ? photo.caption : `${monument.name} · ${monument.epochLabel}`;
-      if (prevBtn) prevBtn.disabled = list.length <= 1;
-      if (nextBtn) nextBtn.disabled = list.length <= 1;
-    }
-
-    function stepLightbox(delta) {
-      const list = sessionPhotos[lightboxState.monumentId] || [];
-      if (list.length <= 1) return;
-      lightboxState.index = (lightboxState.index + delta + list.length) % list.length;
-      updateLightboxView();
-    }
-
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox');
-      if (modal) modal.classList.remove('open');
-    }
-
-    function handleBackdropClick(event) {
-      if (event.target && event.target.id === 'lightbox') {
-        closeLightbox();
-      }
-    }
-
-    function resetUserState(btn) {
-      if (!btn) return;
-      if (btn.dataset.armed !== 'true') {
-        btn.dataset.armed = 'true';
-        btn.textContent = 'Confirmar?';
-        window.setTimeout(function () {
-          if (btn.dataset.armed === 'true') {
-            btn.dataset.armed = 'false';
-            btn.textContent = 'Repor dados';
+      const photoInputs = document.querySelectorAll(`[data-photo-input]`);
+      photoInputs.forEach(function (input) {
+        input.addEventListener(`change`, function () {
+          const id = input.getAttribute(`data-photo-input`);
+          const file = input.files && input.files[0];
+          if (file) {
+            handlePhotoUpload(id, file);
           }
-        }, 4000);
+        });
+      });
+
+      const removeBtns = document.querySelectorAll(`[data-remove-photo]`);
+      removeBtns.forEach(function (btn) {
+        btn.addEventListener(`click`, function () {
+          removePhoto(btn.getAttribute(`data-remove-photo`));
+        });
+      });
+    }
+
+    function toggleVisited(monumentId) {
+      if (!monumentId) return;
+      const idx = appState.visitedIds.indexOf(monumentId);
+      if (idx === -1) {
+        appState.visitedIds.push(monumentId);
+      } else {
+        appState.visitedIds.splice(idx, 1);
+      }
+
+      const isVisited = appState.visitedIds.indexOf(monumentId) !== -1;
+      const card = document.getElementById(`card-${monumentId}`);
+      if (card) {
+        card.classList.toggle(`is-visited`, isVisited);
+      }
+      const btn = document.querySelector(`[data-visit-toggle="${monumentId}"]`);
+      if (btn) {
+        btn.setAttribute(`aria-pressed`, isVisited ? `true` : `false`);
+        btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> ${isVisited ? `Visitado` : `Marcar paragem`}`;
+      }
+
+      updateProgressSummary();
+      renderProximityMap();
+      renderTimeline();
+      applyFilters();
+      schedulePersist();
+    }
+
+    function handleNoteInput(monumentId, value) {
+      if (!monumentId) return;
+      appState.notesById[monumentId] = value;
+
+      const statusEl = document.getElementById(`notes-status-${monumentId}`);
+      if (statusEl) {
+        const len = value.trim().length;
+        statusEl.textContent = len > 0
+          ? `Anotação registada (` + len + ` caracteres)`
+          : `Sem anotações`;
+        statusEl.classList.toggle(`has-notes`, len > 0);
+      }
+
+      updateProgressSummary();
+      schedulePersist();
+    }
+
+    function handlePhotoUpload(monumentId, file) {
+      if (!monumentId || !file) return;
+      if (appState.sessionPhotoUrlsById[monumentId]) {
+        URL.revokeObjectURL(appState.sessionPhotoUrlsById[monumentId]);
+      }
+      const objectUrl = URL.createObjectURL(file);
+      appState.sessionPhotoUrlsById[monumentId] = objectUrl;
+      appState.photoNamesById[monumentId] = file.name;
+
+      renderMonuments();
+      updateProgressSummary();
+      schedulePersist();
+      showBanner(`Fotografia «` + file.name + `» inserida no cartão.`);
+    }
+
+    function removePhoto(monumentId) {
+      if (!monumentId) return;
+      if (appState.sessionPhotoUrlsById[monumentId]) {
+        URL.revokeObjectURL(appState.sessionPhotoUrlsById[monumentId]);
+        delete appState.sessionPhotoUrlsById[monumentId];
+      }
+      delete appState.photoNamesById[monumentId];
+
+      renderMonuments();
+      updateProgressSummary();
+      schedulePersist();
+    }
+
+    function updateProgressSummary() {
+      const visitedCount = appState.visitedIds.length;
+      const total = MONUMENTS.length;
+
+      const notesCount = MONUMENTS.filter(function (m) {
+        const val = appState.notesById[m.id] || ``;
+        return val.trim().length > 0;
+      }).length;
+
+      const sessionPhotosCount = Object.keys(appState.sessionPhotoUrlsById).length;
+
+      const ratioEl = document.getElementById(`progress-ratio`);
+      const subEl = document.getElementById(`progress-sub`);
+      const barEl = document.getElementById(`progress-bar-fill`);
+
+      if (ratioEl) ratioEl.textContent = visitedCount + `/` + total;
+      if (subEl) {
+        const paragemWord = visitedCount === 1 ? `paragem visitada` : `paragens visitadas`;
+        const notaWord = notesCount === 1 ? `nota` : `notas`;
+        const fotoWord = sessionPhotosCount === 1 ? `foto` : `fotos`;
+        subEl.textContent = visitedCount + ` ` + paragemWord + ` · ` + notesCount + ` ` + notaWord + ` · ` + sessionPhotosCount + ` ` + fotoWord;
+      }
+      if (barEl) {
+        barEl.style.width = Math.round((visitedCount / total) * 100) + `%`;
+      }
+    }
+
+    function syncFilterButtons() {
+      const pills = document.querySelectorAll(`.filter-pill`);
+      pills.forEach(function (pill) {
+        const isCurrent = pill.getAttribute(`data-filter`) === appState.activeFilter;
+        pill.setAttribute(`aria-pressed`, isCurrent ? `true` : `false`);
+      });
+    }
+
+    function applyFilters() {
+      const query = appState.searchQuery.trim().toLowerCase();
+      let visibleCount = 0;
+
+      MONUMENTS.forEach(function (m) {
+        const unit = document.getElementById(`unit-${m.id}`);
+        if (!unit) return;
+
+        const isVisited = appState.visitedIds.indexOf(m.id) !== -1;
+        const noteVal = (appState.notesById[m.id] || ``).trim();
+        const hasNotes = noteVal.length > 0;
+
+        let matchesFilter = true;
+        if (appState.activeFilter === `visited`) {
+          matchesFilter = isVisited;
+        } else if (appState.activeFilter === `pending`) {
+          matchesFilter = !isVisited;
+        } else if (appState.activeFilter === `with-notes`) {
+          matchesFilter = hasNotes;
+        } else if (appState.activeFilter === `classified`) {
+          matchesFilter = m.isClassified;
+        }
+
+        const haystack = [
+          m.name,
+          m.epoch,
+          m.classification,
+          m.address,
+          m.synthesis,
+          m.highlights.join(` `),
+          noteVal
+        ].join(` `).toLowerCase();
+
+        const matchesQuery = query === `` || haystack.indexOf(query) !== -1;
+        const shouldShow = matchesFilter && matchesQuery;
+
+        unit.classList.toggle(`is-hidden`, !shouldShow);
+        if (shouldShow) visibleCount += 1;
+      });
+
+      const statusEl = document.getElementById(`results-status`);
+      if (statusEl) {
+        statusEl.textContent = `A mostrar ` + visibleCount + ` de ` + MONUMENTS.length + ` monumentos`;
+      }
+
+      const emptyState = document.getElementById(`empty-filter-state`);
+      if (emptyState) {
+        emptyState.classList.toggle(`is-visible`, visibleCount === 0);
+      }
+    }
+
+    function exportFieldNotebook() {
+      const lines = [
+        `PEDDY PAPER — MONUMENTOS DE VIANA DO CASTELO`,
+        `Registo de Exploração de Campo`,
+        `==================================================`,
+        `Progresso: ` + appState.visitedIds.length + ` / ` + MONUMENTS.length + ` paragens visitadas`,
+        ``
+      ];
+
+      MONUMENTS.forEach(function (m) {
+        const isVisited = appState.visitedIds.indexOf(m.id) !== -1;
+        const note = (appState.notesById[m.id] || ``).trim();
+        const photoName = appState.photoNamesById[m.id] || ``;
+        lines.push(m.order + `. ` + m.name);
+        lines.push(`Estado: ` + (isVisited ? `Visitado` : `Por visitar`));
+        lines.push(`Época / Estilo: ` + m.epoch);
+        lines.push(`Morada: ` + m.address);
+        if (photoName) {
+          lines.push(`Fotografia associada: ` + photoName);
+        }
+        lines.push(`Notas de campo: ` + (note ? note : `(sem anotações)`));
+        lines.push(`--------------------------------------------------`);
+      });
+
+      const content = lines.join(`\n`);
+      const api = getApi();
+      if (api && typeof api.triggerFileDownload === `function`) {
+        api.triggerFileDownload({
+          content: content,
+          contentType: `text/plain`,
+          encoding: `UTF-8`,
+          filename: `peddy-paper-viana-notas-de-campo.txt`
+        });
+        showBanner(`Caderno de campo exportado com sucesso (peddy-paper-viana-notas-de-campo.txt).`);
+      } else {
+        const blob = new Blob([content], { type: `text/plain;charset=utf-8` });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement(`a`);
+        a.href = url;
+        a.download = `peddy-paper-viana-notas-de-campo.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showBanner(`Caderno de campo transferido.`);
+      }
+    }
+
+    function handleResetProgress(btn) {
+      if (!btn) return;
+      if (btn.dataset.armed !== `true`) {
+        btn.dataset.armed = `true`;
+        btn.classList.add(`is-armed`);
+        btn.textContent = `Confirmar reinício`;
+        setTimeout(function () {
+          if (btn.dataset.armed === `true`) {
+            btn.dataset.armed = `false`;
+            btn.classList.remove(`is-armed`);
+            btn.textContent = `Reiniciar caderno`;
+          }
+        }, 4500);
         return;
       }
-      btn.dataset.armed = 'false';
-      btn.textContent = 'Repor dados';
-      appState.visited = [];
-      appState.route = [];
-      appState.notes = {};
-      clearFilters();
-      persistState();
-      showToast('Marcações e notas repostas.');
-    }
 
-    function exportSummary() {
-      const lines = [
-        'MONUMENTOS DO PEDDY PAPER - VIANA DO CASTELO',
-        '============================================',
-        ''
-      ];
-      MONUMENTS.forEach(function (m) {
-        const inRoute = appState.route.indexOf(m.id) !== -1 ? 'Sim' : 'Não';
-        const visited = appState.visited.indexOf(m.id) !== -1 ? 'Sim' : 'Não';
-        const note = appState.notes[m.id] || 'Sem notas';
-        lines.push(`${m.index}. ${m.name} (${m.epochLabel} · ${m.classification})`);
-        lines.push(`   História: ${m.history}`);
-        lines.push(`   Arquitetura: ${m.architecture}`);
-        lines.push(`   No roteiro: ${inRoute} | Visitado: ${visited}`);
-        lines.push(`   Notas de campo: ${note}`);
-        lines.push('');
+      btn.dataset.armed = `false`;
+      btn.classList.remove(`is-armed`);
+      btn.textContent = `Reiniciar caderno`;
+
+      Object.keys(appState.sessionPhotoUrlsById).forEach(function (id) {
+        URL.revokeObjectURL(appState.sessionPhotoUrlsById[id]);
       });
-      const content = lines.join('\n');
 
-      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'peddy-paper-viana-do-castelo.txt';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-      showToast('Registo exportado em TXT.');
+      appState.visitedIds = [];
+      appState.notesById = {};
+      appState.photoNamesById = {};
+      appState.sessionPhotoUrlsById = {};
+      appState.activeFilter = `all`;
+      appState.searchQuery = ``;
+
+      const searchEl = document.getElementById(`search-input`);
+      if (searchEl) searchEl.value = ``;
+
+      syncFilterButtons();
+      renderProximityMap();
+      renderTimeline();
+      renderMonuments();
+      persistState();
+      showBanner(`Caderno de campo reiniciado. Todas as paragens e notas foram limpas.`);
     }
 
-    document.addEventListener('keydown', function (event) {
-      const modal = document.getElementById('lightbox');
-      if (!modal || !modal.classList.contains('open')) return;
-      if (event.key === 'Escape') closeLightbox();
-      if (event.key === 'ArrowLeft') stepLightbox(-1);
-      if (event.key === 'ArrowRight') stepLightbox(1);
-    });
-
-    function initApp() {
-      loadPersistedState();
-
-      /* Keep panels expanded by default on larger screens, collapsed on mobile */
-      if (window.innerWidth > 768) {
-        const d1 = document.getElementById('details-overview');
-        const d2 = document.getElementById('details-toolbar');
-        if (d1) d1.open = true;
-        if (d2) d2.open = true;
+    function bindGlobalControls() {
+      const searchEl = document.getElementById(`search-input`);
+      if (searchEl) {
+        searchEl.addEventListener(`input`, function () {
+          appState.searchQuery = searchEl.value;
+          applyFilters();
+          schedulePersist();
+        });
       }
 
-      const sEl = document.getElementById('search-input');
-      const eEl = document.getElementById('epoch-select');
-      const stEl = document.getElementById('status-select');
-      if (sEl) sEl.value = appState.search;
-      if (eEl) eEl.value = appState.epoch;
-      if (stEl) stEl.value = appState.status;
+      const pills = document.querySelectorAll(`.filter-pill`);
+      pills.forEach(function (pill) {
+        pill.addEventListener(`click`, function () {
+          appState.activeFilter = pill.getAttribute(`data-filter`) || `all`;
+          syncFilterButtons();
+          applyFilters();
+          schedulePersist();
+        });
+      });
 
-      renderOverview();
-      renderCards();
+      const exportBtn = document.getElementById(`export-notes-btn`);
+      if (exportBtn) {
+        exportBtn.addEventListener(`click`, exportFieldNotebook);
+      }
 
-      if (window.lucide && typeof window.lucide.createIcons === 'function') {
-        window.lucide.createIcons();
+      const resetBtn = document.getElementById(`reset-progress-btn`);
+      if (resetBtn) {
+        resetBtn.addEventListener(`click`, function () {
+          handleResetProgress(resetBtn);
+        });
+      }
+
+      const clearBtn = document.getElementById(`clear-filters-btn`);
+      if (clearBtn) {
+        clearBtn.addEventListener(`click`, function () {
+          appState.activeFilter = `all`;
+          appState.searchQuery = ``;
+          const s = document.getElementById(`search-input`);
+          if (s) s.value = ``;
+          syncFilterButtons();
+          applyFilters();
+          schedulePersist();
+        });
+      }
+    }
+
+    async function initApp() {
+      const api = getApi();
+      if (api && typeof api.getAppState === `function`) {
+        try {
+          const saved = await api.getAppState();
+          if (saved && typeof saved === `object`) {
+            if (Array.isArray(saved.visitedIds)) appState.visitedIds = saved.visitedIds;
+            if (saved.notesById && typeof saved.notesById === `object`) appState.notesById = saved.notesById;
+            if (saved.photoNamesById && typeof saved.photoNamesById === `object`) appState.photoNamesById = saved.photoNamesById;
+            if (typeof saved.activeFilter === `string`) appState.activeFilter = saved.activeFilter;
+            if (typeof saved.searchQuery === `string`) appState.searchQuery = saved.searchQuery;
+          }
+        } catch (err) {
+          // Continua com estado inicial limpo
+        }
+      }
+
+      const searchEl = document.getElementById(`search-input`);
+      if (searchEl && appState.searchQuery) {
+        searchEl.value = appState.searchQuery;
+      }
+
+      syncFilterButtons();
+      bindGlobalControls();
+      renderProximityMap();
+      renderTimeline();
+      renderMonuments();
+
+      if (api && typeof api.notifyAppReady === `function`) {
+        api.notifyAppReady();
       }
     }
 
